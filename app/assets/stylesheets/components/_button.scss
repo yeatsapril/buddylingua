@@ -1,0 +1,71 @@
+.button-purple {
+  background-color: $highlight-1;
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: $border-radius-lg;
+}
+
+.button-purple:hover {
+  background-color: #681fa3;
+  color: white;
+}
+
+
+.button-orange {
+  background-color: $highlight-2;
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: $border-radius-lg;
+}
+
+.button-orange:hover {
+  background-color: #eb9422;
+  color: white;
+}
+
+
+.button-secondary {
+  background-color: $grey-5;
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: $border-radius-lg;
+}
+
+.button-secondary:hover {
+  background-color: $grey-6;
+  color: white;
+}
+
+//Rectangular (use for the searchbars and newsletter form)
+
+.button-rect-orange {
+  background-color: $highlight-2;
+  text-decoration: none !important;
+  color: white;
+  padding: 8px 24px;
+  border-radius: $border-radius;
+}
+
+.button-rect-orange:hover {
+  background-color: #eb9422;
+  color: white;
+}
+
+// Use on banners only
+
+.button-purple-banner {
+  background-color: $highlight-1;
+  text-decoration: none !important;
+  color: white;
+  padding: 14px 32px;
+  font-size: 25px;
+  border-radius: $border-radius-lg;
+}
+
+.button-purple-banner:hover {
+  background-color: #681fa3;
+  color: white;
+}
