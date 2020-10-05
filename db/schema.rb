@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_153433) do
+ActiveRecord::Schema.define(version: 2020_10_05_171913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,19 @@ ActiveRecord::Schema.define(version: 2020_10_05_153433) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.integer "age"
+    t.bigint "native_language_id"
+    t.bigint "target_language_id"
+    t.integer "target_language_level"
+    t.bigint "gender_id", null: false
+    t.text "description"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["gender_id"], name: "index_users_on_gender_id"
+    t.index ["native_language_id"], name: "index_users_on_native_language_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["target_language_id"], name: "index_users_on_target_language_id"
   end
 
   add_foreign_key "matches", "users", column: "user_1_id"
@@ -78,4 +89,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_153433) do
   add_foreign_key "messages", "users"
   add_foreign_key "user_interests", "interests"
   add_foreign_key "user_interests", "users"
+  add_foreign_key "users", "genders"
+  add_foreign_key "users", "languages", column: "native_language_id"
+  add_foreign_key "users", "languages", column: "target_language_id"
 end

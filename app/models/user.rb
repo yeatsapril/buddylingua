@@ -3,20 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  belongs_to :native_language, class_name: 'Language', optional: true
+  belongs_to :target_language, class_name: 'Language', optional: true
 
-  # if things get slow, probably a good idea to review this code block
   def buddies
     # all users where we have a match with us, but arent us (passes in to function below for this)
-    users = matches.map do |match|
-      # compares the matches retrieved, and returnes the id that isn't the current user
-      if match.user_1 == self
-        match.user_2
-      else
-        match.user_1
-      end
-    end
+    # compares the matches retrieved, and returnes the id that isn't the current user
     # checking if each id is only matched with each other once (unique matches)
-    users.uniq
+    User.joins(
+      "INNER JOIN matches m
+      ON (users.id = m.user_1_id OR users.id = m.user_2_id)"
+    ).where(
+      "(user_1_id = :id OR user_2_id = :id) AND users.id != :id", id: id
+    ).distinct
   end
 
   def matches
