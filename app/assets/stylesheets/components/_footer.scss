@@ -6,11 +6,12 @@
   justify-content: space-between;
   height: 50px;
   padding: 0px 50px;
- 
-}
+ }
+
 .footer-links {
   display: flex;
   align-items: center;
+  background-color: white;
 }
 .footer-links a {
   color: black;
@@ -20,8 +21,9 @@
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 0.5;
 }
-.footer .fa-heart {
-  color: #D23333;
+
+.footer-text {
+  color:black;
 }
