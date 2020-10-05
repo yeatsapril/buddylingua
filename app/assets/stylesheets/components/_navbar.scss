@@ -1,12 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(93,29,145);
+  background: linear-gradient(90deg, rgba(93,29,145,1) 0%, rgba(93,29,145,1) 12%, rgba(126,39,196,1) 12%);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
