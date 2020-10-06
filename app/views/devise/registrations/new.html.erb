@@ -13,11 +13,13 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "Name" }%>
-            <%= f.input :native_language,
+            <%= f.association :native_language,
+                        collection: Language.all, prompt: 'Choose language..',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "Native Language" }%>
-            <%= f.input :target_language,
+            <%= f.association :target_language,
+                        collection: Language.all, prompt: 'Choose language..',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "Target Language" }%>
