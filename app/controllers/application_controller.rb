@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :native_language, :target_language, :target_language_level, :address])
+    devise_parameter_sanitizer.permit(:sign_up, keys:
+      [:name, :native_language_id, :target_language_id, :target_language_level, :address])
   # and maybe the photo?
   end
 end

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :native_language, class_name: 'Language', optional: true
   belongs_to :target_language, class_name: 'Language', optional: true
-  belongs_to :gender
+  belongs_to :gender, optional: true
   has_many :user_interests
   has_many :interests, through: :user_interests
   has_many :matches
