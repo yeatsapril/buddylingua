@@ -1,0 +1,91 @@
+.c-container {
+  position: relative;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,
+    minmax(29px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 0 40px;
+}
+
+.c-container .c-box {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.c-container .c-box:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #000;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+  background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+
+.c-content {
+  position: relative;
+  padding: 20px;
+  transform: translateY(40px);
+}
+
+.c-box .c-content h2 {
+  position:absolute;
+  top: -60px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 10em;
+  color: rgba(0, 0, 0, .05);
+  transition: 0.5s;
+}
+
+.c-box:hover .c-content h2 {
+  top: -140px;
+}
+
+.c-box .c-content h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.c-box .c-content p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.c-box .c-content a {
+  position: relative;
+  margin: 40px 0 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid #000;
+  display: inline-block;
+  transition: 0.5s;
+  transform: translateY(-40px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.c-box:hover .c-content a {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-box .c-content a:hover {
+  color: #fff;
+  background: #000;
+}
