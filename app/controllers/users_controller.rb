@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = { name: "bob", email: "bob@email.com" }
-  end
+    # testdata
+    @user = User.find(params[:id])
+    end
 
 
 
