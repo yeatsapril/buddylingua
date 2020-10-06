@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }, uniqueness: true
   validates :target_language_level, presence: true, numericality: { only_integer: true }
 
+  has_one_attached :photo
+
   def buddies
     # all users where we have a match with us, but arent us (passes in to function below for this)
     # compares the matches retrieved, and returnes the id that isn't the current user
