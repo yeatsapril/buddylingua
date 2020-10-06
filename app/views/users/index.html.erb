@@ -35,3 +35,9 @@
   </div>
 </div>
 
+
+<div class="container d-flex justify-content-between">
+  <% @users.each do |user| %>
+    <%= render 'shared/gbordercard', user: user %>
+  <% end %>
+</div>

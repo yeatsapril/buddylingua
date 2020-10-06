@@ -1,0 +1,163 @@
+:root {
+  $br: .5em
+}
+
+.special-card {
+  position: relative;
+  width: 12.5em;
+  cursor: pointer;
+}
+
+.outer-info {
+  display: flex;
+  text-align: center;
+
+  img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+  }
+}
+
+img {
+  max-width: 100%;
+
+}
+
+.rank {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  z-index: 1000;
+  font-weight: bold;
+  background: rgba(0,0,0,.5);
+  padding: .5em .5em .75em;
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0% 50%, 0 0);
+  transition: transform 200ms ease-in-out;
+}
+
+
+.front {
+  transition: 250ms;
+
+  .thumbnail {
+    border-radius: .5em;
+  }
+
+  .name {
+    margin: .75em 0;
+  }
+
+  .outer-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .outer-info img {
+    border: 1px solid;
+  }
+}
+
+
+.back {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  transform: translateY(35%);
+
+  .inner-info {
+    margin: 1em 0;
+    columns: 2;
+    column-rule: 1px solid rgba(0,0,0, .75);
+  }
+
+  .inner-stat {
+    font-size: .75rem;
+    text-align: center;
+
+    span {
+      font-size: .7rem;
+      text-align: center;
+      display: block;
+    }
+  }
+}
+
+.background-card {
+  background: #a5ecd7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform: scale(.2, .9);
+  opacity: 0;
+  border-radius: .5em;
+}
+
+.special-card:hover {
+  .rank {
+    transform: translate(150%, -74%);
+  }
+
+  .front {
+    transform: translateY(-30%) scale(.8);
+
+    .name {
+      animation:special-cardName 250ms forwards;
+    }
+
+    .outer-stats {
+      opacity: 0;
+    }
+  }
+
+  .back {
+    opacity: 1;
+    transition:
+      transform 200ms ease,
+      opacity 150ms linear;
+    transform: translateY(0);
+  }
+
+  .background-card {
+    transition:
+      transform 200ms ease-in-out,
+      opacity 100ms linear;
+    opacity: 1;
+    transform: scale(1.4, 1.2);
+  }
+
+}
+
+@keyframes special-cardName {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+
+  50% {
+    text-align: center;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  100% {
+    text-align: center;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
