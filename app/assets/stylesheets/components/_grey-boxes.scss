@@ -1,0 +1,19 @@
+.grey-box {
+    list-style-type: none;
+}
+
+.grey-box-list {
+    background-color: $grey-1; 
+    display: inline;
+    margin-right: 15px;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 0;
+    right:-100px;
+    font-size: 24px;
+    opacity: 0.3;
+}

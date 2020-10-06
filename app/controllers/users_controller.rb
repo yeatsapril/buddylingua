@@ -3,12 +3,19 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-  end
+   end
 
   def show
     # testdata
     @user = User.find(params[:id])
-    end
+    @interests = %w[England Denmark USA Canada Portugal Russia]
+
+
+
+    @native_language = Language.find(current_user.native_language_id).name
+    @target_language = Language.find(current_user.target_language_id).name
+
+  end
 
 
 

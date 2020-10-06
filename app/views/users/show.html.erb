@@ -1,20 +1,81 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-4 d-flex justify-content-center mt-5" style="height: 800px;">
-           <div>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar avatar-large mt-3", alt: "avatar" %>
-            <p></p>
-            <%= render "shared/flag", {language: "english", flag_class: "flag-big"} %>
-           </div>     
-           
+
+        <%# left column %>
+
+        <div class="col-3 d-flex mt-5 justify-content-center" style="height:800px; border-right: 4px solid rgba(191, 191, 191, 0.2);">
+           <div style="position: relative;">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar avatar-large", alt: "avatar" %>
+
+            <div class="edit-icon"><i class="far fa-edit"></i></div>
+
+            <p style="text-align: center;" class="mt-3 border-bottom"><strong><%= @user.name %></strong>, <%= @user.age %> <span><%= render "shared/flag", {language: "english", flag_class: "flag-small"} %></span></p>            
+               <div style="background-color: white" class="d-flex justify-content-left">
+                   <div>
+                    <p> <%= @user.email %> </p>
+                    <p> <%= @user.address %> </p>
+                    </div> 
+                </div>    
+           </div>             
         </div>
 
-        <div class="col-8" style="background-color: orange">
-           <p>something here</p>
-            
-           <%= render "shared/flag", language: "english", flag_class: "flag-small" %>
-        </div>
+      
+        <div class="col-8 mt-5 pr-5 ">
+            <div style="position:relative;">
+                <p>SELF INTRODUCTION</p>
+                <%= @user.description %>
+                <div class="edit-icon"><i class="far fa-edit"></i></div>
+            </div>
+
+            <div class="my-5" style="position:relative;">
+                <p>TRAVELLED TO</p>
+                <div class="edit-icon"><i class="far fa-edit"></i></div>
+                <ul class="grey-box">
+                    <% @interests.each do |interest|%>
+                    <li class="grey-box-list">
+                    <%= interest %>
+                    </li>                
+                 <% end %>                 
+             </ul>
+            </div>
+
+            <div  style="position:relative;">
+                <p>SPEAKS</p>
+                <div class="edit-icon"><i class="far fa-edit"></i></div>
+                <%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %>
+                <%= @target_language.capitalize %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %>
+           </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div style="position:relative;">
+                <p>WANTS TO LEARN</p>
+                <%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %>
+                <div class="edit-icon"><i class="far fa-edit"></i></div>
+           </div>
+
+
+
+        </div> 
+
+        <div class="col-1 mt-5">
+        
+        </div> 
+
+
+        
+                       
+         <%# <%= render "shared/flag", language: "english", flag_class: "flag-small" %>
+        
 
     </div>
 </div>
