@@ -1,10 +1,15 @@
+<div class="banner-home d-flex justify-content-center">
 
-<div class="banner-home">
-  <div class="container">
-    <h1 class="mb-3" style="font-size: 80px; font-weight: 800; margin-left: 100px; margin-top: 80px"><strong>BuddyLingua</strong></h1>
-    <p class="mb-3" style="font-size: 40px; font-weight: 400; margin-left: 100px;">Meet a buddy, learn a language.</p>
-    <br>
-    <p><%= link_to "GET STARTED", "#", class: "button-purple-banner", style: "margin-left: 100px;"%></p>
-    <h1 class="oval"></h1>
+  <div class="container-banner">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="container" style="margin-right: 250px">
+          <h1 class="mb-3" style="font-size: 90px; font-weight: 800;"><strong>BuddyLingua</strong></h1>
+          <p class="mb-3" style="font-size: 50px; font-weight: 400;">Meet a buddy, learn a language.</p>
+          <br>
+          <p><%= link_to "GET STARTED", user_session_path(@user), class: "button-purple-banner"%></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
