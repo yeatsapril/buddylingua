@@ -1,10 +1,16 @@
 <div class="c-container">
   <div class="c-box">
+    <%= image_tag('https://source.unsplash.com/random/150x150')%>
     <div class="c-content">
-      <h2>01</h2>
-      <h3><%= user.name %></h3>
-      <p><%= user.description %></p>
-      <a href="#">Button</a>
+      <div class="c-details">
+        <h2><%= user.name %>, <%= user.age %> 🇳🇴</h2>
+        <h3><%= user.address %></h3>
+        <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
+        <br>
+        <br>
+        <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
+      </div>
+      <a href="#">Add</a>
     </div>
   </div>
 </div>
