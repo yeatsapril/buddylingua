@@ -1,24 +1,26 @@
+// this is a container holding the card
+// padding top and bottom, and centers the card
 .c-container {
-  position: relative;
-  width: 90%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill,
-    minmax(29px, 1fr));
-  grid-template-rows: auto;
-  grid-gap: 0 40px;
-}
-
-.c-container .c-box {
-  position: relative;
-  height: 400px;
-  width: 300px;
   display: flex;
   justify-content: center;
+  padding: 40px 0;
+}
+
+// this is the card itself
+.c-container .c-box {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  height: 250px;
+  width: 650px;
+  padding: 20px;
+  border-radius: 12px;
   background: #fff;
   border: 1px solid #000;
 }
 
+// this makes the special card border
 .c-container .c-box:before {
   content: '';
   position: absolute;
@@ -27,65 +29,85 @@
   right: -2px;
   bottom: -2px;
   background: #000;
-  transform: skew(2deg, 2deg);
+  transform: skew(4deg, 4deg);
   z-index: -1;
-  background: linear-gradient(315deg, #ff0057, #e64a19);
+  border-radius: 12px;
+  background: linear-gradient(315deg, #D31E9C, #7E27C4);
 }
 
+// makes the content fill the available space of the box
+// pushes the button to the end of the card always
 .c-content {
-  position: relative;
-  padding: 20px;
-  transform: translateY(40px);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
+// side padding to inner user content
+.c-content .c-details {
+
+  margin: 20px 20px;
+}
+
+// img in to rounded avatar
+.c-box img {
+  height: 150px;
+  width: 150px;
+  margin: 0 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+// h2 text
 .c-box .c-content h2 {
-  position:absolute;
-  top: -60px;
-  right: 20px;
-  margin: 0;
-  padding: 0;
-  font-size: 10em;
-  color: rgba(0, 0, 0, .05);
-  transition: 0.5s;
-}
-
-.c-box:hover .c-content h2 {
-  top: -140px;
-}
-
-.c-box .c-content h3 {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   padding: 0;
   font-size: 24px;
   font-weight: 500;
 }
 
+// h3 text
+.c-box .c-content h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// p text
 .c-box .c-content p {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
+.c-box .c-content strong {
+  color: #FFA024;
+}
+
+// button
 .c-box .c-content a {
-  position: relative;
-  margin: 40px 0 0;
+  margin: 170px 0 0;
   padding: 10px 20px;
+  text-align: right;
   text-decoration: none;
-  border: 1px solid #000;
-  display: inline-block;
+  border: 1px solid #7E27C4;
+  border-radius: 8px;
   transition: 0.5s;
   transform: translateY(-40px);
   opacity: 0;
   visibility: hidden;
 }
 
+// button on card hover
 .c-box:hover .c-content a {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
+// button on button hover
 .c-box .c-content a:hover {
   color: #fff;
-  background: #000;
+  background: #7E27C4;
 }
