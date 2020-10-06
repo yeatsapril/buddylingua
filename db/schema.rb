@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_171913) do
     t.bigint "native_language_id"
     t.bigint "target_language_id"
     t.integer "target_language_level"
-    t.bigint "gender_id"
+    t.bigint "gender_id", null: false
     t.text "description"
     t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
