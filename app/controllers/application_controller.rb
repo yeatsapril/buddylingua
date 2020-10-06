@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
       [:name, :native_language_id, :target_language_id, :target_language_level, :address])
   # and maybe the photo?
   end
+
+  def after_sign_in_path_for(resource)
+  user_path(current_user) # your path
+  end
+
 end
