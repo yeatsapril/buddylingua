@@ -9,6 +9,14 @@ require 'faker'
 
 User.destroy_all
 Match.destroy_all
+Language.destroy_all
+
+languages = []
+LANGUAGE_NAMES = %w[english spanish french german italian norwegian swedish danish polish lithuanian croatian russian].freeze
+puts "creating Languages.."
+LANGUAGE_NAMES.each do |language|
+  languages << Language.create(name: language)
+end
 
 puts 'Creating 10 fake users..'
 10.times do
@@ -19,8 +27,8 @@ puts 'Creating 10 fake users..'
     age: rand(18..40),
     address: %w[Songsvann Ekeberg Frognerseter Østmarka Ullevålseter Vettakollen Holmenkollen Frysja Maridalsvannet Kolsåstoppen Bygdøy Nøklevannet].sample,
     gender: Gender.create(name: Gender::GENDER.sample),
-    native_language: Language.create(name: Language::LANGUAGE.sample),
-    target_language: Language.create(name: Language::LANGUAGE.sample),
+    native_language: languages.sample,
+    target_language: languages.sample,
     target_language_level: rand(1..6),
     description: Faker::Lorem.paragraphs
     )
