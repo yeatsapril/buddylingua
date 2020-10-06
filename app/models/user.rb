@@ -5,6 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :native_language, class_name: 'Language', optional: true
   belongs_to :target_language, class_name: 'Language', optional: true
+  belongs_to :gender
+  has_many :user_interests
+  has_many :interests, through: :user_interests
+  has_many :matches
+  has_many :messages
+
+  validates :name, :address, :native_language, :target_language, presence: true
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }, uniqueness: true
+  validates :target_language_level, presence: true, numericality: { only_integer: true }
 
   def buddies
     # all users where we have a match with us, but arent us (passes in to function below for this)
