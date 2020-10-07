@@ -15,6 +15,9 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }, uniqueness: true
   validates :target_language_level, presence: true, numericality: { only_integer: true }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   has_one_attached :photo
 
   def buddies
