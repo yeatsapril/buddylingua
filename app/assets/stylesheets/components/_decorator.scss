@@ -1,0 +1,17 @@
+.decorator1 {
+  background-image: image-url("bubble1.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: absolute;
+  left: -500px;
+  z-index: -1;
+}
+
+.decorator2 {
+  background-image: image-url("bubble2.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: absolute;
+  right: -650px;
+  z-index: -1;
+}
