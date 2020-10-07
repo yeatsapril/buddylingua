@@ -10,7 +10,7 @@
         <br>
         <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
       </div>
-      <a href="#">Add</a>
+      <%= link_to 'Add', user_matches_path(user, @match), method: :post %>
     </div>
   </div>
 </div>
