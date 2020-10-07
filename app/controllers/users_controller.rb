@@ -8,12 +8,10 @@ class UsersController < ApplicationController
   def show
     # testdata
     @user = User.find(params[:id])
-    @travels = %w[England Denmark USA Canada Portugal Russia]
     @interests = %w[Technology painting linguistics literature]
 
-
-    @native_language = Language.find(current_user.native_language_id).name
-    @target_language = Language.find(current_user.target_language_id).name
+    @native_language = current_user.native_language.name
+    @target_language = current_user.target_language.name
 
   end
 
