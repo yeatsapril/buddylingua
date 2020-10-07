@@ -22,7 +22,7 @@
             <%= f.input :address, as: :string, required: false, wrapper: false, label: false, placeholder: "Enter the address" %>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.label "Interests:" %></strong>
-            <%= f.association :interests, collection: Interest.all, as: :check_boxes, item_wrapper_tag: :div, item_wrapper_class: "style_item", wrapper: false, label: false, placeholder: "Select your interests" %>
+            <%= f.association :interests, collection: Interest.all, as: :check_boxes, wrapper: false, label: false%>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.input :photo, as: :file %></strong>
             <p class="pb-3"></p>
