@@ -4,7 +4,7 @@
     <%= image_tag('https://source.unsplash.com/random/150x150')%>
     <div class="c-content">
       <div class="c-details">
-        <h2><%= user.name %>, <%= user.age %> 🇳🇴</h2>
+        <h2><%= user.name %>, <%= user.age %> 🇳🇴 <strong> <%= current_user.match_percentage(user) %> % </strong></h2>
         <h3><%= user.address %></h3>
         <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
         <br>

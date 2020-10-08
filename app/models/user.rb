@@ -47,4 +47,41 @@ class User < ApplicationRecord
     match = matches
     match.where('user_1_id = :id OR user_2_id = :id', { id: user.id })
   end
+
+  def match_percentage(user)
+    #compare self to user
+    #full language match will give us 70 (the match percentage will be between 0 and 100).
+      #my target to your native AND my native to your target.
+    #half language match = 35.
+      #my target language is your native OR your target is my native (but not both)
+    #Ages are in a range of 5 years of each other, then 15.
+    #Ages are in a range of 10- years of each other, then 7.
+    #At least 2 interests in common would give 15. (full interest score)
+    #1 interest in common would give 7. (half interest score).
+
+    score = 0
+
+    if native_language == user.target_language
+      score += 35
+    end
+    if target_language == user.native_language
+      score += 35
+    end
+
+    age_diff = (age - user.age).abs
+    if age_diff <= 5
+      score += 15
+    elsif age_diff <= 10
+      score += 7
+    end
+
+    common_interests = (interests & user.interests)
+    if common_interests.size >= 2
+      score += 15
+    elsif common_interests.size == 1
+      score += 7
+    end
+    return score
+  end
+
 end
