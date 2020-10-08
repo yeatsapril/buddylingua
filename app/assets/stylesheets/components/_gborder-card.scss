@@ -17,7 +17,15 @@
   padding: 20px;
   border-radius: 12px;
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+.c-container-link .c-box:hover {
+text-decoration: none;
+}
+
+.c-container .c-box:hover {
+border: 1px solid #7E27C4 !important;
 }
 
 // this makes the special card border
@@ -86,7 +94,7 @@
 }
 
 // button
-.c-box .c-content a {
+.add-button {
   margin: 170px 0 0;
   padding: 10px 20px;
   text-align: right;
@@ -100,14 +108,14 @@
 }
 
 // button on card hover
-.c-box:hover .c-content a {
+.c-box:hover .c-content .add-button {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
 // button on button hover
-.c-box .c-content a:hover {
+.add-button:hover {
   color: #fff;
   background: #7E27C4;
 }
