@@ -8,6 +8,7 @@
 require 'faker'
 
 Match.destroy_all
+
 User.destroy_all
 Language.destroy_all
 Gender.destroy_all
