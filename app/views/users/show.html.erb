@@ -68,16 +68,17 @@
 
         <%# buddies tab %>
         <div class="tab-pane" id="buddies" role="tabpanel" aria-label="buddies-tab">
-          <div class="ml-5">
-            <h6 class="o-2 my-4">YOUR BUDDIES</h6>
+          <div class="mt-3 ml-5 mb-3">
+            <h6 class="my-1" style="color: #FFA024;">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #FFA024; font-size: 18px;"></i></h6>
             <% if @user.buddies.count == 0 %>
             <p>You don't have any buddies yet!</p>
             <p>Let's fix that!</p>
             <br>
             <%= link_to "Find a buddy", users_path, class: "button-purple"%>
             <% else %>
-            <% @user.buddies.each do |user| %>
-            <%= render 'shared/gbordercard', user: user %>
+
+              <% @user.buddies.each do |user| %>
+                <%= render 'shared/buddies_card', user: user %>
             <%# BELOW HERE IS CODE FOR CHAT DO NOT TOUCH!! %>
             <h1>Chat with: <%= user.name %> </h1>
             <% match = @user.find_match(user) %>
