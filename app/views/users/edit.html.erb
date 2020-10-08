@@ -16,13 +16,13 @@
             <%= f.input :age, as: :integer, wrapper: false, label: false, placeholder: "Enter your age" %>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.label "Gender:" %></strong>
-            <%= f.association :gender, collection: Gender.all, prompt: 'Choose gender..', wrapper: false, label: false %>
+            <%= f.association :gender, prompt: 'Choose gender..', wrapper: false, label: false %>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.label "Address:" %></strong>
             <%= f.input :address, as: :string, required: false, wrapper: false, label: false, placeholder: "Enter the address" %>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.label "Interests:" %></strong>
-            <%= f.association :interests, collection: Interest.all, as: :check_boxes, wrapper: false, label: false%>
+            <%= f.association :interests, as: :check_boxes, wrapper: false, label: false%>
             <p class="pb-3"></p>
             <strong class="text-muted"><%= f.input :photo, as: :file %></strong>
             <p class="pb-3"></p>
