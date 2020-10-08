@@ -3,7 +3,11 @@
     <%# left column %>
     <div class="card p-5 mt-5 ml-5 bg-white rounded text-center" style="height:765px; border-right: 4px solid rgba(191, 191, 191, 0.2); border-bottom: none; border-top: none; border-left: none;">
      <div>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar avatar-large", alt: "avatar" %>
+     <% if @user.photo.attached? %>
+       <%= image_tag @user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
+     <% else %>
+       <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar avatar-large", alt: "avatar" %>
+     <% end %>
       <p class="mt-3">
         <strong style="font-size: 24px;"><%= @user.name.capitalize %>,</strong>
         <span style="font-size: 20px;"><%= @user.age %></span>
