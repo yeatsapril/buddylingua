@@ -55,13 +55,16 @@ class UsersController < ApplicationController
     @interests = Interest.order(:name)
     if session[:filter_option] && session[:filter] == "gender"
       @users = User.where(gender_id: session[:filter_option]) - current_user.buddies - [current_user]
+
     elsif session[:filter_option] && session[:filter] == "interest"
       interest = Interest.find(session[:filter_option])
       @users = interest.users - current_user.buddies - [current_user]
+
       # user_interests = UserInterest.where(interest_id: session[:filter_option])
       # @users = User.where(interest_id: session[:filter_option])
     else
       @users = User.all - current_user.buddies - [current_user]
+
     end
   end
 
