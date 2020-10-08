@@ -57,7 +57,7 @@ puts 'Creating 10 fake users..'
   puts "Completed user #{User.last.name}!"
 end
 
-puts "Creating user interests"
+puts "Assigning user interests"
 
 User.all.each do |user|
   interests.sample(3).each do |interest|
@@ -68,7 +68,9 @@ User.all.each do |user|
 end
 end
 
-User.create(  name: Faker::Name.first_name,
+puts "Creating Iza our test user"
+
+User.create(  name: 'Iza',
     email: 'test@test.com',
     password: '123456',
     age: rand(18..40),
@@ -79,3 +81,4 @@ User.create(  name: Faker::Name.first_name,
     target_language_level: rand(1..6),
     description: Faker::Lorem.paragraphs)
 
+puts "Test user created! email is test@test.com and pwd is 123456"

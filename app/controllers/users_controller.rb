@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
 
-  def index    
-    @users = User.all - current_user.buddies - [current_user]
+
+  def index
+    handle_filters
   end
 
   def show
@@ -46,4 +47,22 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:description, :address, :age, :gender_id, :photo, :interest_ids)
   end
+
+  def handle_filters
+    session[:filter] = params[:filter]
+    session[:filter_option] = params[:filter_option]
+    @genders = Gender.order(:name)
+    @interests = Interest.order(:name)
+    if session[:filter_option] && session[:filter] == "gender"
+      @users = User.where(gender_id: session[:filter_option])- current_user.buddies - [current_user]
+    elsif session[:filter_option] && session[:filter] == "interest"
+      interest = Interest.find(session[:filter_option])
+      @users = interest.users- current_user.buddies - [current_user]
+      # user_interests = UserInterest.where(interest_id: session[:filter_option])
+      # @users = User.where(interest_id: session[:filter_option])
+    else
+      @users = User.all- current_user.buddies - [current_user]
+    end
+  end
+
 end
