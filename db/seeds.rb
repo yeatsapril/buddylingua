@@ -34,6 +34,13 @@ end
 
 puts 'Creating 10 fake users..'
 10.times do
+  language_1 = languages.sample
+  language_2 = languages.sample
+
+  while language_1 == language_2 do
+    language_2 = languages.sample
+  end
+
   User.create(
     name: Faker::Name.first_name,
     email: Faker::Internet.email,
@@ -41,8 +48,8 @@ puts 'Creating 10 fake users..'
     age: rand(18..40),
     address: %w[Songsvann Ekeberg Frognerseter Østmarka Ullevålseter Vettakollen Holmenkollen Frysja Maridalsvannet Kolsåstoppen Bygdøy Nøklevannet].sample,
     gender: genders.sample,
-    native_language: languages.sample,
-    target_language: languages.sample,
+    native_language: language_1,
+    target_language: language_2,
     target_language_level: rand(1..6),
     description: Faker::Lorem.paragraphs
     )
