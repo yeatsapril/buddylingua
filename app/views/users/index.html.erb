@@ -24,19 +24,40 @@
   <div class="row align-items-center mt-4">
     <div class="form" style="margin: 0 auto;">
       <div class="container" style="border-color: black">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle bg-white" style="color: black !important; border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Best Match</a>
-            <a class="dropdown-item" href="#">Gender</a>
-            <a class="dropdown-item" href="#">Interests</a>
-            <a class="dropdown-item" href="#">Online</a>
-            <a class="dropdown-item" href="#">Nearby</a>
-          </div>
-            <%= link_to "Advanced Search", "", class: "button-purple"%>
-        </div><!-- .dropdown -->
+          <!-- .filter -->
+
+            <form style="padding: 16px; border-radius: 3px; border: 5px solid #FFA024;" action="/users" method="GET">
+              <label for="filter">Filter by</label>
+              <select id="filter" name="filter" onchange="this.form.submit()">
+                <option value="">Best match</option>
+                <option value="gender" <%= "selected" if session[:filter] == "gender" %>>Filter by gender</option>
+                <option value="interest" <%= "selected" if session[:filter] == "interest" %>>Filter by interest</option>
+              </select>
+              <% if session[:filter] == "gender" %>
+                <select name="filter_option" onchange="this.form.submit()">
+                  <option value="">Pick a gender</option>
+                  <% @genders.each do |gender| %>
+                    <option value="<%= gender.id %>"><%= gender.name %></option>
+                  <% end %>
+                </select>
+              <% elsif session[:filter] == "interest" %>
+                <select name="filter_option" onchange="this.form.submit()">
+                  <option value="">Pick an interest</option>
+                  <% @interests.each do |interest| %>
+                    <option value="<%= interest.id %>"><%= interest.name %></option>
+                  <% end %>
+                </select>
+              <% end %>
+            </form>
+          <%#= link_to "Clear Filter Options", clear_path %>
+
+
+
+
+
+
+
 
       </div><!-- .container -->
     </div>
