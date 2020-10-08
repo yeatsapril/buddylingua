@@ -11,7 +11,11 @@
       <% if user_signed_in? %>
       <li>
         <%= link_to user_path(current_user) do %>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar border border-white mr-2" %>
+        <% if @user.photo.attached? %>
+          <%= image_tag @user.photo, class: "avatar-navbar border border-white mr-2", alt: "avatar", style: 'object-fit: cover;' %>
+          <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-navbar border border-white mr-2" %>
+          <% end %>
         <% end %>
       </li>
         <li class="nav-item dropdown">
