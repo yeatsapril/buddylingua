@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
 
-  def index
-    @users = User.all
+  def index    
+    @users = User.all - current_user.buddies - [current_user]
   end
 
   def show
