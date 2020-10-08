@@ -8,7 +8,10 @@ class UsersController < ApplicationController
 
   def show
     # testdata
-    @interests = %w[technology painting linguistics literature]
+    @interests = []
+    @user.interests.each do |interest|
+      @interests.push(interest.name)
+    end
 
     @native_language = current_user.native_language.name
     @target_language = current_user.target_language.name
