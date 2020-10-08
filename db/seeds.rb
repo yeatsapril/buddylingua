@@ -8,12 +8,13 @@
 require 'faker'
 
 User.destroy_all
-Match.destroy_all
 Language.destroy_all
+Gender.destroy_all
+Interest.destroy_all
 
 languages = []
 LANGUAGE_NAMES = %w[english spanish french german italian norwegian swedish danish polish lithuanian croatian russian].freeze
-puts "creating Languages.."
+puts "Creating Languages.."
 LANGUAGE_NAMES.each do |language|
   languages << Language.create(name: language)
 end
