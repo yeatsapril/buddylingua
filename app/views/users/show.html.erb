@@ -71,14 +71,33 @@
           <div class="ml-5">
             <h6 class="o-2 my-4">YOUR BUDDIES</h6>
             <% if @user.buddies.count == 0 %>
-              <p>You don't have any buddies yet!</p>
-              <p>Let's fix that!</p>
-              <br>
-              <%= link_to "Find a buddy", users_path, class: "button-purple"%>
+            <p>You don't have any buddies yet!</p>
+            <p>Let's fix that!</p>
+            <br>
+            <%= link_to "Find a buddy", users_path, class: "button-purple"%>
             <% else %>
-              <% @user.buddies.each do |user| %>
-                <%= render 'shared/gbordercard', user: user %>
+            <% @user.buddies.each do |user| %>
+            <%= render 'shared/gbordercard', user: user %>
+            <%# BELOW HERE IS CODE FOR CHAT DO NOT TOUCH!! %>
+            <h1>Chat with: <%= user.name %> </h1>
+            <% match = @user.find_match(user) %>
+            <div id="messages" data-chatroom-id="<%= match[0].id %>">
+              <% match[0].messages.each do |message| %>
+              <div class="message-container" id="message-<%= message.id %>">
+                <i class="author">
+                  <span><%= message.user.name %></span>
+                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                </i>
+                <p><%= message.content %></p>
+              </div>
               <% end %>
+              <%= simple_form_for [ @user, match[0], @message ], remote: true do |f| %>
+                <%= f.input :content, label: false, placeholder: "Message ##{user.name}" %>
+                <%= f.submit 'Submit', class: "button-purple" %>
+              <% end %>
+              <%# ABOVE HERE IS CODE FOR CHAT DO NOT TOUCH!! %>
+            </div>
+            <% end %>
             <% end %>
           </div>
         </div>

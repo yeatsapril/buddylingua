@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
     @native_language = current_user.native_language.name
     @target_language = current_user.target_language.name
+
+    @message = Message.new
   end
 
   def edit; end

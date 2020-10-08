@@ -36,4 +36,9 @@ class User < ApplicationRecord
     # retrieveing all the matches that this user is a a part of
     Match.where('user_1_id = :id OR user_2_id = :id', { id: id })
   end
+
+  def find_match(user)
+    match = matches
+    match.where('user_1_id = :id OR user_2_id = :id', { id: user.id })
+  end
 end
