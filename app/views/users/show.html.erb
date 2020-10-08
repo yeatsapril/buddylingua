@@ -95,13 +95,7 @@
             <% match = @user.find_match(user) %>
             <div id="messages" data-chatroom-id="<%= match[0].id %>">
               <% match[0].messages.each do |message| %>
-              <div class="message-container" id="message-<%= message.id %>">
-                <i class="author">
-                  <span><%= message.user.name %></span>
-                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                </i>
-                <p><%= message.content %></p>
-              </div>
+                <%= render 'messages/message', message: message %>
               <% end %>
               <%= simple_form_for [ @user, match[0], @message ], remote: true do |f| %>
                 <%= f.input :content, label: false, placeholder: "Message ##{user.name}" %>
