@@ -27,8 +27,8 @@
 
           <!-- .filter -->
 
-            <form style="padding: 16px; border-radius: 3px; border: 5px solid #FFA024;" action="/users" method="GET">
-              <label for="filter">Filter by</label>
+            <form class="filter-index" action="/users" method="GET">
+              <label style="padding-right:6px;" for="filter">Filter by</label>
               <select id="filter" name="filter" onchange="this.form.submit()">
                 <option value="">Best match</option>
                 <option value="gender" <%= "selected" if session[:filter] == "gender" %>>Filter by gender</option>
