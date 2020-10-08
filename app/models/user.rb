@@ -6,9 +6,9 @@ class User < ApplicationRecord
   belongs_to :native_language, class_name: 'Language', optional: true
   belongs_to :target_language, class_name: 'Language', optional: true
   belongs_to :gender, optional: true
-  has_many :user_interests
-  has_many :interests, through: :user_interests
-  has_many :matches, dependent: :destroy
+  has_many :user_interests, dependent: :destroy
+  has_many :interests, through: :user_interests, dependent: :destroy
+  has_many :matches
   has_many :messages, dependent: :destroy
 
   validates :name, :address, :native_language, :target_language, presence: true
