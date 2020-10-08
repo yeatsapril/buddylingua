@@ -2,16 +2,22 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
 
+
   def index
     handle_filters
   end
 
   def show
     # testdata
-    @interests = %w[technology painting linguistics literature]
+    @interests = []
+    @user.interests.each do |interest|
+      @interests.push(interest.name)
+    end
 
     @native_language = current_user.native_language.name
     @target_language = current_user.target_language.name
+
+    @message = Message.new
   end
 
   def edit; end
@@ -48,14 +54,14 @@ class UsersController < ApplicationController
     @genders = Gender.order(:name)
     @interests = Interest.order(:name)
     if session[:filter_option] && session[:filter] == "gender"
-      @users = User.where(gender_id: session[:filter_option])
+      @users = User.where(gender_id: session[:filter_option])- current_user.buddies - [current_user]
     elsif session[:filter_option] && session[:filter] == "interest"
       interest = Interest.find(session[:filter_option])
-      @users = interest.users
+      @users = interest.users- current_user.buddies - [current_user]
       # user_interests = UserInterest.where(interest_id: session[:filter_option])
       # @users = User.where(interest_id: session[:filter_option])
     else
-      @users = User.all
+      @users = User.all- current_user.buddies - [current_user]
     end
   end
 

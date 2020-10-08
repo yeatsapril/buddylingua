@@ -1,4 +1,5 @@
-<div class="c-container">
+<%= link_to(user) do %>
+<div class="c-container" style="text-decoration: none;">
   <div class="c-box">
     <%= image_tag('https://source.unsplash.com/random/150x150')%>
     <div class="c-content">
@@ -10,7 +11,8 @@
         <br>
         <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
       </div>
-      <%= link_to 'Add', user_matches_path(user, @match), method: :post %>
+      <%= link_to 'Add', user_matches_path(user, @match), class: "add-button", method: :post %>
     </div>
   </div>
 </div>
+<<% end %>

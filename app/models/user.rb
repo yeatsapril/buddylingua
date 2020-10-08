@@ -20,6 +20,12 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  validate :check_native_language_and_target_language
+
+  def check_native_language_and_target_language
+    errors.add(:target_language, "can't be the same as native language") if target_language == native_language
+  end
+
   def buddies
     # all users where we have a match with us, but arent us (passes in to function below for this)
     # compares the matches retrieved, and returnes the id that isn't the current user
@@ -35,5 +41,10 @@ class User < ApplicationRecord
   def matches
     # retrieveing all the matches that this user is a a part of
     Match.where('user_1_id = :id OR user_2_id = :id', { id: id })
+  end
+
+  def find_match(user)
+    match = matches
+    match.where('user_1_id = :id OR user_2_id = :id', { id: user.id })
   end
 end
