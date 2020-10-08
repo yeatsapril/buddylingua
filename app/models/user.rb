@@ -20,6 +20,12 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  validate :check_native_language_and_target_language
+
+  def check_native_language_and_target_language
+    errors.add(:target_language, "can't be the same as native language") if target_language == native_language
+  end
+
   def buddies
     # all users where we have a match with us, but arent us (passes in to function below for this)
     # compares the matches retrieved, and returnes the id that isn't the current user
