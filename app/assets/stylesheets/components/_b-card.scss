@@ -1,0 +1,33 @@
+.b-card {
+  background-color: white;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+  margin-left: 0px;
+}
+
+.b-card .b-card-content h2 {
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 23px;
+}
+
+.b-card .b-card-content p {
+  padding-left: 20px;
+  margin: 4px;
+}
+
+.b-card-action {
+  color:$grey-4;
+}
+
+.b-card-action:hover  {
+  color: $highlight-2;
+}
+
+.b-container {
+  max-width: 500px;
+}
