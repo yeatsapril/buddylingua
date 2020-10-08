@@ -14,6 +14,8 @@ class MatchesController < ApplicationController
     redirect_to users_path
   end
 
+  
+
   private
 
   def set_user_match

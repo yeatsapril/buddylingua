@@ -8,8 +8,8 @@ class User < ApplicationRecord
   belongs_to :gender, optional: true
   has_many :user_interests
   has_many :interests, through: :user_interests
-  has_many :matches
-  has_many :messages
+  has_many :matches, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   validates :name, :address, :native_language, :target_language, presence: true
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }, uniqueness: true
