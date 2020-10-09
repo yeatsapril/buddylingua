@@ -1,18 +1,20 @@
-<%= link_to(user) do %>
-<div class="c-container" style="text-decoration: none;">
-  <div class="c-box">
-    <%= image_tag('https://source.unsplash.com/random/150x150')%>
-    <div class="c-content">
-      <div class="c-details">
-        <h2><%= user.name %>, <%= user.age %> 🇳🇴 <strong> <%= current_user.match_percentage(user) %> % </strong></h2>
-        <h3><%= user.address %></h3>
-        <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
-        <br>
-        <br>
-        <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
+<% if user_signed_in? %>
+  <%= link_to(user) do %>
+  <div class="c-container" style="text-decoration: none;">
+    <div class="c-box">
+      <%= image_tag('https://source.unsplash.com/random/150x150')%>
+      <div class="c-content">
+        <div class="c-details">
+          <h2><%= user.name %>, <%= user.age %> 🇳🇴 <strong> <%= current_user.match_percentage(user) %> % </strong></h2>
+          <h3><%= user.address %></h3>
+          <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
+          <br>
+          <br>
+          <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
+        </div>
+        <%= link_to 'Add', user_matches_path(user, @match), class: "add-button", method: :post %>
       </div>
-      <%= link_to 'Add', user_matches_path(user, @match), class: "add-button", method: :post %>
     </div>
   </div>
-</div>
+  <<% end %>
 <<% end %>
