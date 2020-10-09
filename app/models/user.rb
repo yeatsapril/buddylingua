@@ -38,10 +38,10 @@ class User < ApplicationRecord
     ).distinct
   end
 
+  # kill this pls
   def buddies?
     buddies.include?(@user)
   end
-  
 
   def matches
     # retrieveing all the matches that this user is a a part of
