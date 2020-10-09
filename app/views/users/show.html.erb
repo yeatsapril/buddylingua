@@ -22,6 +22,15 @@
           <div>
             <p> <%= @user.email %> </p>
             <p> <%= @user.address %> </p>
+
+                
+              <% if @user != current_user && !current_user.buddies.include?(@user) %>
+                <div>
+                  <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange", style:"margin.top: 100px;", method: :post %>           
+                </div>
+              <% end %>
+              
+
           </div>
         </div>
       </div>
