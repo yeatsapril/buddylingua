@@ -13,8 +13,8 @@ class UsersController < ApplicationController
       @interests.push(interest.name)
     end
 
-    @native_language = current_user.native_language.name
-    @target_language = current_user.target_language.name
+    @native_language = @user.native_language.name
+    @target_language = @user.target_language.name
 
     @message = Message.new
   end
