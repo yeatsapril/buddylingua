@@ -20,8 +20,8 @@
   border: 1px solid rgb(209, 209, 209);
 }
 
-.c-container-link .c-box:hover {
-text-decoration: none;
+a {
+text-decoration: none !important;
 }
 
 .c-container .c-box:hover {
