@@ -15,11 +15,14 @@ class UsersController < ApplicationController
 
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
-
     @message = Message.new
+    @match 
+
   end
 
+
   def edit; end
+
 
   def update
     @user.interests = []
@@ -36,6 +39,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
 
   private
 
