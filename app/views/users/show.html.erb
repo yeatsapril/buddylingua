@@ -47,11 +47,12 @@
       <div class="tab-content">
         <div class="tab-pane active" id="profile" role="tabpanel" aria-label="profile-tab">
           <div class="mt-3 ml-5 mb-3">
-            <h6 class="o-2">SELF INTRODUCTION</h6>
             <% if @user.description.nil? %>
-            <p class="mt-3">Tell us more about yourself!&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe,  edit_user_path(@user) %></span></p>
+              <h6 class="o-2">SELF INTRODUCTION</h6>
+              <p class="mt-3">Tell us more about yourself!&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe, edit_user_path(@user) %></p>
             <% else %>
-            <%= @user.description %>
+              <h6 class="o-2">SELF INTRODUCTION&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe, edit_user_path(@user) %></h6>
+              <%= @user.description %>
             <% end %>
           </div>
           <br>
@@ -63,11 +64,12 @@
           <br>
 
           <div class="ml-5">
-            <h6 class="o-2 my-4">INTERESTS</h6>
             <% if @user.description.nil? %>
-            <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe,  edit_user_path(@user) %></span></p>
+              <h6 class="o-2 my-4">INTERESTS</h6>
+              <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe, edit_user_path(@user) %></p>
             <% else %>
-            <%= render 'shared/interests_grey_boxes', interests: @interests %>
+              <h6 class="o-2 my-4">INTERESTS&nbsp; &nbsp;<%= link_to "<span><i class='fas fa-plus-circle' style='color: #1ED346; font-size: 20px;'></i></span>".html_safe, edit_user_path(@user) %></h6>
+              <%= render 'shared/interests_grey_boxes', interests: @interests %>
             <% end %>
           </div>
           <br>
