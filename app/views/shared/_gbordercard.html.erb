@@ -2,7 +2,11 @@
   <%= link_to(user) do %>
   <div class="c-container" style="text-decoration: none;">
     <div class="c-box">
+      <% if user.photo.attached? %>
+        <%= image_tag user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
+      <% else %>
       <%= image_tag('https://source.unsplash.com/random/150x150')%>
+      <% end %>
       <div class="c-content">
         <div class="c-details">
           <h2><%= user.name %>, <%= user.age %> 🇳🇴 <strong> <%= current_user.match_percentage(user) %> % </strong></h2>
@@ -16,5 +20,5 @@
       </div>
     </div>
   </div>
-  <<% end %>
-<<% end %>
+  <% end %>
+<% end %>
