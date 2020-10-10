@@ -52,12 +52,14 @@
             <% if @user == current_user %>
             <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><strong>MY PROFILE</strong></a>
             <% else %>
-            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><strong>PROFILE</strong></a>
-            <% end %>
+            <!-- if we're on a potential buddy profile, we don't need to show any tabs -->
           </li>
+          <% end %>
+          <% if @user == current_user %>
           <li class="nav-item">
             <a class="nav-link" id="buddies-tab" data-toggle="tab" href="#buddies" role="tab" aria-controls="buddies" aria-selected="true"> <strong>BUDDIES</strong></a>
           </li>
+          <% end %>
         </ul>
       </div>
 
@@ -73,7 +75,7 @@
             <% elsif @user != current_user %>
               <h6 class="o-2">SELF INTRODUCTION&nbsp; &nbsp;</h6>
               <%= @user.description %>
-            <% end %>           
+            <% end %>
           </div>
           <br>
 
