@@ -20,8 +20,8 @@
 
         <div style="background-color: white" class="mt-2">
           <div>
-            <p> <%= @user.email %> </p>
-            <p> <%= @user.address %> </p>
+            <p><i class="far fa-envelope pr-2"></i><%= @user.email %> </p>
+            <p><i class="fas fa-map-pin pr-2"></i><%= @user.address %> </p>
 
 
               <% if @user != current_user && !current_user.buddies.include?(@user) %>
