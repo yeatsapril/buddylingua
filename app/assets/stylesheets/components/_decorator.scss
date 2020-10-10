@@ -123,3 +123,47 @@
   z-index: -1;
   opacity: 0.7;
 }
+
+
+.decorator-1-profile {
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 435px;
+  width: 447px;
+  position: absolute;
+  left: -340px;
+  top: -340px;
+  z-index: -1;
+  transform: rotate(210deg);
+}
+
+.decorator-2-profile {
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 658px;
+  width: 654px;
+  position: absolute;
+  right: -1540px;
+  top: -380px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.decorator-3-profile {
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 335px;
+  width: 347px;
+  position: absolute;
+  right: -1670px;
+  top: 470px;
+  z-index: -1;
+  transform: rotate(210deg);
+  opacity: 0.7;
+}
