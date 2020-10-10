@@ -1,8 +1,6 @@
 <div class="b-container">
-
   <div class="b-cards">
     <div class="b-card ml-0">
-
         <% if user.photo.attached? %>
           <%= image_tag user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
         <% else %>
@@ -12,9 +10,10 @@
 
           <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
           <p><%= user.address %></p>
-          <div class="b-card-action">
+          <div class="b-card-action" data-action="click->toggle#toggle">
             <!-- commenting this below out since we don't have the delete function yet-->
             <!-- <p class="mt-2"><i class="far fa-trash-alt"></i></p> -->
+            <a class="mt-2"><i class="far fa-comments"></i></a>
           </div>
         </div>
 

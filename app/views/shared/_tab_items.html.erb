@@ -6,14 +6,14 @@
   <p>Let's fix that!</p>
   <%= link_to "Find a buddy", users_path, class: "button-purple"%>
   <% else %>
-  <div class="d-flex flex-start">
+  <div class="d-flex flex-start" data-controller="toggle">
     <div>
       <% @user.buddies.each do |user| %>
       <%= render 'shared/buddies_card', user: user %>
       <%# BELOW HERE IS CODE FOR CHAT  %>
       <% end %>
     </div>
-    <div class="container-chat ml-5 border">
+    <div class="container-chat ml-5 border" data-target="toggle.toggleable">
       <% match = @user.find_match(@user.buddies.first) %>
       <div id="messages" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
