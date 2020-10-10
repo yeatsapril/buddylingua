@@ -13,6 +13,20 @@
   height: 100vh;
   width: 35vh;
   position: absolute;
-  right: -0px;
+  right: 0px;
   z-index: -1;
+}
+
+.decorator3 {
+  background-image: image-url("test.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 335px;
+  width: 347px;
+  position: absolute;
+  left: -70px;
+  z-index: -1;
+  margin-top: 50px;
+
 }
