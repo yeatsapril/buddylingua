@@ -26,8 +26,17 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initChatroomCable } from '../channels/chatroom_channels'
 // import { initSelect2 } from '../components/init_select2';
+// websocket for chat
+import { initChatroomCable } from '../channels/chatroom_channels'
+// js stimulus controller imports
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+const application = Application.start()
+const context = require.context("./controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
