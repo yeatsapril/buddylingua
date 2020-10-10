@@ -1,18 +1,125 @@
 .decorator1 {
-  background-image: image-url("bubble1.png");
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 535px;
+  width: 547px;
   position: absolute;
-  left: -500px;
+  left: -520px;
+  top: -320px;
   z-index: -1;
+  transform: rotate(210deg);
 }
 
 .decorator2 {
-  background-image: image-url("bubble2.png");
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 35vh;
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 658px;
+  width: 654px;
   position: absolute;
-  right: -0px;
+  right: -1140px;
+  top: -380px;
   z-index: -1;
+}
+
+.decorator3 {
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 658px;
+  width: 654px;
+  position: absolute;
+  right: 400px;
+  top: 600px;
+  z-index: -1;
+  transform: rotate(50deg);
+  opacity: 0.7;
+}
+
+.decorator4 {
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 435px;
+  width: 447px;
+  position: absolute;
+  right: -1000px;
+  top: 450px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.decorator5 {
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 558px;
+  width: 554px;
+  position: absolute;
+  right: -890px;
+  top: 1430px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.decorator6 {
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 335px;
+  width: 347px;
+  position: absolute;
+  right: 500px;
+  top: 2000px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.decorator7 {
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 658px;
+  width: 654px;
+  position: absolute;
+  right: 400px;
+  top: 2900px;
+  z-index: -1;
+  transform: rotate(50deg);
+}
+
+.decorator8 {
+  background-image: image-url("bubble-purple.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 435px;
+  width: 447px;
+  position: absolute;
+  right: -1000px;
+  top: 2550px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.decorator9 {
+  background-image: image-url("bubble-orange.svg");
+  background-size: cover;
+  object-fit: cover;
+  padding: 0;
+  height: 358px;
+  width: 354px;
+  position: absolute;
+  right: -900px;
+  top: 3350px;
+  z-index: -1;
+  opacity: 0.7;
 }
