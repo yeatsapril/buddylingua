@@ -1,0 +1,15 @@
+.divider-purple {
+  background: rgb(195,155,227);
+  background: radial-gradient(circle, rgba(195,155,227,1) 0%, rgba(226,202,245,1) 100%);
+  height:5px;
+  width:40px;
+  border-radius: 7px 7px 7px 7px;
+}
+
+.divider-orange{
+  background: rgb(251,211,159);
+  background: radial-gradient(circle, rgba(251,211,159,1) 0%, rgba(254,231,202,1) 100%);
+  height:5px;
+  width:40px;
+  border-radius: 7px 7px 7px 7px;
+}

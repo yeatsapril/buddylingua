@@ -4,8 +4,8 @@
     <div class="row">
       <div class="col-12 ">
         <div class="container" style="margin-right: 350px">
-          <h1 class="mb-3" style="font-size: 90px; font-weight: 800;"><strong>BuddyLingua</strong></h1>
-          <p class="mb-3" style="font-size: 50px; font-weight: 400;">Meet a buddy, learn a language.</p>
+          <h1 class="mb-3" style="font-size: 80px; font-weight: 800;"><strong>BuddyLingua</strong></h1>
+          <p class="mb-3" style="font-size: 40px; font-weight: 400;">Meet a buddy, learn a language.</p>
           <br>
           <% if @user %>
           <p><%= link_to "GET STARTED", user_path(@user), class: "button-purple-banner"%></p>
@@ -18,16 +18,52 @@
   </div>
 </div>
 
+
+
+<!-- cards with icons -->
+<div style="background-color: #f9f9f9;">
+  <div class="container p-3">
+    <h2 class="text-center" style="font-weight: 600; font-size: 35px; color: #414040; margin-top: 65px; margin-bottom: 10x">The Ultimate Learning Experience</h2>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-4 col-lg-4">
+        <div class="card p-5 d-flex align-items-center bg-transparent" style="min-height: 400px; border: none;">
+            <div class="icon-learn"></div>
+            <hr class="m-4 divider-purple">
+          <p class="text-center" style="font-size: 25px;">Learn languages and explore other cultures</p>
+        </div>
+      </div>
+
+      <div class="col-4 col-lg-4">
+        <div class="card p-5 d-flex align-items-center bg-transparent" style="min-height: 400px; border: none;">
+            <div class="icon-people"></div>
+            <hr class="m-4 divider-purple">
+          <p class="text-center" style="font-size: 25px;">Be part of the worldwide community</p>
+        </div>
+      </div>
+
+      <div class="col-4 col-lg-4">
+        <div class="card p-5 d-flex align-items-center bg-transparent" style="min-height: 400px; border: none;">
+            <div class="icon-chat"></div>
+            <hr class="m-4 divider-purple">
+          <p class="text-center" style="font-size: 25px;">Chat with language partners and get new friends</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 <!-- newsletter -->
-<div class="p-5" style="background-color: #7E27C4;">
-  <div class="text-center padded" id="newsletter">
-    <h2 class="text-white mb-3" style="font-weight: 500; font-size: 40px;">Get news from us</h2>
-    <p class="text-white" style="font-weight: 300; font-size: 20px;">Sign up for our weekly newsletter to get the latest news,<br>updates and amazing offers delivered directly to you inbox</p>
+<div class="p-5" style="background-color: #5D1D91;">
+  <div class="text-center" id="newsletter">
+    <h2 class="text-white mb-3 mt-5" style="font-weight: 600; font-size: 40px;">Get news from us</h2>
+    <p class="text-white" style="font-weight: 300; font-size: 25px;">Sign up for our weekly newsletter to get the latest news,<br>updates and amazing offers delivered directly to you inbox</p>
     <br>
-    <form class="form-inline d-flex justify-content-center">
-      <input type="email" placeholder="mynamel@gmail.com" class="form-control mr-1 text-center"  style="font-size: 20px;">
+    <form class="form-inline d-flex justify-content-center mb-5">
+      <input type="email" placeholder="myname@gmail.com" class="form-control mr-1 text-center"  style="font-size: 20px; color: red;">
       <input type="submit" value="Subscribe" class="ml-1 button-rect-orange" style="font-size: 20px;">
     </form>
   </div>
 </div>
-
