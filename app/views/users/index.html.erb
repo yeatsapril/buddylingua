@@ -1,25 +1,28 @@
 
-<div class="container decorator1"></div>
-<div class=" container decorator2"></div>
 
 <div class="container bg-transparent" style="position: relative">
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-6 mr-0">
+    <div class="col-6 col-md-6 col-lg-6 p-0">
       <div class="container">
         <div class="banner-index"></div>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center ml-0">
+    <div class="col-6 col-md-6 col-lg-6 d-flex align-items-center p-0">
       <div class="container">
         <h1 class="mb-3" style="font-size: 90px; font-weight: 800;">
-          <span style="color: #5D1D91;"><strong>Find a </strong></span>
+          <span style="color: #5D1D91;"><strong>Find a</strong></span>
           <strong style="color: #7E27C4;">friend</strong>
         </h1>
-      </div><!-- .container -->
-    </div><!-- ml-0 -->
-  </div><!-- .row -->
-<%# </div><!-- .container --> %>
+      </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-6 col-md-6 col-lg-6">
+      <div class="decorator1"></div>
+      <div class="decorator2"></div>
+    </div>
+  </div>
 
   <div class="row align-items-center mt-4">
     <div class="form" style="margin: 0 auto;">
@@ -27,8 +30,8 @@
 
           <!-- .filter -->
 
-            <form class="filter-index" action="/users" method="GET">
-              <label style="padding-right:6px;" for="filter">Filter by</label>
+            <form style="padding: 16px; border-radius: 3px; border: 5px solid #FFA024;" action="/users" method="GET">
+              <label for="filter">Filter by</label>
               <select id="filter" name="filter" onchange="this.form.submit()">
                 <option value="">Best match</option>
                 <option value="gender" <%= "selected" if session[:filter] == "gender" %>>Filter by gender</option>
