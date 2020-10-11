@@ -13,7 +13,7 @@
       <%# BELOW HERE IS CODE FOR CHAT  %>
       <% end %>
     </div>
-    <div class="container-chat ml-5 border" data-target="toggle.toggleable">
+    <div class="container-chat ml-5 border" data-controller="message">
       <% match = @user.find_match(@user.buddies.first) %>
       <div id="messages" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
@@ -23,7 +23,7 @@
         <%# Chat entry field %>
         <%= simple_form_for [ @user, match[0], @message ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
         <%= f.input :content, label: false, placeholder: "Message ##{@user.buddies.first.name}", class: "form-inline" %>
-        <%= f.submit 'Submit', class: "ml-2 button-chat", style: "margin-bottom: 21px" %>
+        <%= f.submit 'Submit', class: "ml-2 button-chat", data: { target: "message.button" }, data: { action: "click->message#stop" }, style: "margin-bottom: 21px" %>
         <% end %>
         <%# ABOVE HERE IS CODE FOR CHAT %>
       </div>

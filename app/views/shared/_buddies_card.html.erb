@@ -10,14 +10,12 @@
 
           <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
           <p><%= user.address %></p>
-          <div class="b-card-action" data-action="click->toggle#toggle">
+          <div class="b-card-action">
             <!-- commenting this below out since we don't have the delete function yet-->
             <!-- <p class="mt-2"><i class="far fa-trash-alt"></i></p> -->
             <a class="mt-2"><i class="far fa-comments"></i></a>
           </div>
         </div>
-
     </div>
   </div>
-
 </div>
