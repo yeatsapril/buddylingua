@@ -36,8 +36,6 @@
                   <%=link_to "Back", users_path, class: "button-orange", style:"margin.top: 100px;" %>
                 </div>
               <% end %>
-
-
           </div>
         </div>
       </div>
@@ -49,8 +47,8 @@
     <%# content %>
 
     <div class="col-8 mt-5 pr-5">
-      <div class="card col-md-8 pl-5 pr-5 rounded border-0 bg-transparent">
-        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+      <div class="card col-md-8 pl-5 pr-5 rounded border-0">
+        <ul class="nav nav-tabs mb-3" data-controller="tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <% if @user == current_user %>
             <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><strong>MY PROFILE</strong></a>
