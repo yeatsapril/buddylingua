@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
+  before_action :set_session_buddy, only: %i[show]
 
   def index
     handle_filters
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
     @message = Message.new
-    set_session_buddy
   end
 
   def edit; end
@@ -40,10 +40,14 @@ class UsersController < ApplicationController
   private
 
   def set_session_buddy
-    if @user.find_match(session[:buddy]).ids == []
-      session[:buddy] = @user.buddies.first
-    else
-      session[:buddy]
+    if @user.buddies
+      if session[:buddy].nil?
+        session[:buddy] = @user.buddies.first
+      elsif @user.find_match(session[:buddy]).ids == []
+        session[:buddy] = @user.buddies.first
+      else
+        session[:buddy]
+      end
     end
   end
 
