@@ -1,13 +1,14 @@
 <div class="mt-3 ml-5 mb-3">
-  <h6 class="my-1" style="color: #FFA024;">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #FFA024; font-size: 18px;"></i></h6>
-  <br>
+  
   <% if @user.buddies.count == 0 %>
   <p class="mt-3">You don't have any buddies yet!</p>
-  <p>Let's fix that!</p>
+  <p class="mb-5">Let's fix that!</p>
   <%= link_to "Find a buddy", users_path, class: "button-purple"%>
   <% else %>
   <div class="d-flex flex-start" data-controller="chat">
-    <div class="px-4 rounded shadow">
+    <div>
+      <h6 class="my-1" style="color: #FFA024;">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #FFA024; font-size: 18px;"></i></h6>
+      <br>
       <% @user.buddies.each do |user| %>
       <%= render 'shared/buddies_card', user: user %>
       <%# BELOW HERE IS CODE FOR CHAT  %>
