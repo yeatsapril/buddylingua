@@ -84,7 +84,7 @@ anders = User.new(
   target_language_level: "4",
   description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian 😀")
   
-
+  anders.photo.attach(io: name_anders, filename: 'anders.jpg', content_type: 'image/jpg')
   anders.save
   puts "Completed user #{User.last.name}!"
   
@@ -101,7 +101,7 @@ jacqueline = User.new(
   target_language_level: "3",
   description: "Je m'appelle Jacqueline, J'habite à Paris. Enchanté de faire votre connaissance!")
   
-
+  jacqueline.photo.attach(io: name_jacqueline, filename: 'jacqueline.jpg', content_type: 'image/jpg')
   jacqueline.save
   puts "Completed user #{User.last.name}!"
 
