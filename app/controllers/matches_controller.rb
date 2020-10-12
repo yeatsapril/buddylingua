@@ -18,7 +18,7 @@ class MatchesController < ApplicationController
   def destroy    
     Match.destroy(@match.ids[0])
     flash[:alert] = "Match deleted"
-    redirect_to request.referrer || root_url      
+    redirect_to request.referrer || root_url 
   end
 
    private
