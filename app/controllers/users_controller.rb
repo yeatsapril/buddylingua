@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
-  before_action :set_session_buddy, only: %i[show]
+  # before_action :set_session_buddy, only: %i[show]
 
   def index
     handle_filters
@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
     @message = Message.new
+
+    if @user.buddies
+      set_session_buddy
+    end
   end
 
   def edit; end
