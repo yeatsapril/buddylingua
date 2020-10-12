@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
     @message = Message.new
-    session[:buddy] ||= @user.buddies.first
+    set_session_buddy
   end
 
   def edit; end
@@ -38,6 +38,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_session_buddy
+    if @user.find_match(session[:buddy]).ids == []
+      session[:buddy] = @user.buddies.first
+    else
+      session[:buddy]
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])
