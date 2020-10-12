@@ -1,11 +1,23 @@
 const { connect } = require('twilio-video');
 
+const buddyConnected = (buddy) => {
+  console.log("buddy connected")
+  buddy.tracks.forEach(publication => {
+    if (publication.isSubscribed) {
+      const track = publication.track;
+      document.getElementById('remote-video').appendChild(track.attach());
+    }
+  });
+
+  buddy.on('trackSubscribed', track => {
+    document.getElementById('remote-video').appendChild(track.attach());
+  });
+}
+
 const connectToRoom = (token) => {
   connect( token.token, { name: token.room }).then(room => {
     console.log(`Successfully joined a Room: ${room}`);
-    room.on('participantConnected', participant => {
-      console.log(`A remote Participant connected: ${participant}`);
-    });
+    room.on('participantConnected', buddyConnected);
   }, error => {
     console.error(`Unable to connect to Room: ${error.message}`);
   });
