@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
     @message = Message.new
+    session[:buddy] ||= @user.buddies.first
   end
 
   def edit; end
@@ -46,7 +47,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:description, :address, :age, :gender_id, :photo, :interest_ids)
   end
 
-
   def handle_filters
     session[:filter] = params[:filter]
     session[:filter_option] = params[:filter_option]
@@ -63,5 +63,4 @@ class UsersController < ApplicationController
     end
     @users = @users.sort_by { |user| -current_user.match_percentage(user) }
   end
-
 end

@@ -42,7 +42,6 @@ class User < ApplicationRecord
     buddies.include?(@user)
   end
 
-
   def matches
     # retrieveing all the matches that this user is a a part of
     Match.where('user_1_id = :id OR user_2_id = :id', { id: id })
@@ -56,7 +55,6 @@ class User < ApplicationRecord
     match = matches
     match.where('user_1_id = :id OR user_2_id = :id', { id: user.id })
   end
-
 
   def match_percentage(user)
     #compare self to user
