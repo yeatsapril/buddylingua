@@ -7,16 +7,13 @@
   <%= link_to "Find a buddy", users_path, class: "button-purple"%>
   <% else %>
   <div class="d-flex flex-start" data-controller="chat">
-    <div>
+    <div class="px-4 rounded shadow">
       <% @user.buddies.each do |user| %>
       <%= render 'shared/buddies_card', user: user %>
       <%# BELOW HERE IS CODE FOR CHAT  %>
       <% end %>
     </div>
     <div class="container-chat ml-5 border">
-      <% if session[:buddy].nil? %>
-        <p> nothing here for now </p>
-      <% else %>
         <% match = @user.find_match(session[:buddy]) %>
       <div id="messages" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
@@ -29,7 +26,6 @@
         <%= f.submit 'Submit', class: "ml-2 button-chat", style: "margin-bottom: 21px" %>
         <% end %>
         <%# ABOVE HERE IS CODE FOR CHAT %>
-        <% end %>
       </div>
     <% end %>
     </div>
