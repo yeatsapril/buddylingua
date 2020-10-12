@@ -47,8 +47,11 @@ name_karolina    = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v
 name_tomek       = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/tomek_bo0fwg.jpg')
 name_gabriella   = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/gabriella_tqfqdc.jpg')
 name_xavier      = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/xavier_pz81k6.jpg')
-
-
+name_matis       = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/matis_elguru.jpg')
+name_sergey      = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602514024/sergei_ivkzrf.jpg')
+name_ebba        = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/ebba_zwgo5f.jpg')
+name_olivia      = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/olivia_zpsgtq.jpg')
+name_aleksandra  = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/alekdsandra_sjy6yx.jpg')
 
 puts "Creating Iza our test user..."
 
@@ -58,7 +61,7 @@ User.create(
   password: "123456",
   age: "19",
  
-  address: "Turisthotellvegen 6, 2609 Lillehammer",
+  address: "Turisthotellvegen 6, Lillehammer",
   gender: genders[0],
   native_language: languages[10],
   target_language: languages[7],
@@ -75,7 +78,7 @@ anders = User.new(
   email: "anders.johansen@gmail.com",
   password: "123456",
   age: "31",
-  address: "Fantoftvegen 14, 5075 Bergen",
+  address: "Fantoftvegen 14, Bergen",
   gender: genders[1],
   native_language: languages[7],
   target_language: languages[8],
@@ -109,7 +112,7 @@ monika = User.new(
   email: "monika.wisniewska@02.com",
   password: "123456",
   age: "32",
-  address: "Smyczkowa 5/7, 02-678 Warsaw, Poland",
+  address: "Smyczkowa 5/7, 02-678 Warsaw",
   gender: genders[0],
   native_language: languages[8],
   target_language: languages[10],
@@ -125,7 +128,7 @@ klaus = User.new(
   email: "t_brian_2010@gmail.com",
   password: "123456",
   age: "27",
-  address: "Schützenstr. 8, Glandorf, 49219",
+  address: "Schützenstr. 8, Glandorf",
   gender: genders[1],
   native_language: languages[4],
   target_language: languages[3],
@@ -176,7 +179,7 @@ karolina = User.new(
   email: "szcepaniak.karolina@gmail.com",
   password: "123456",
   age: "21",
-  address: "Sandakerveien 99, 0484 Oslo",
+  address: "Sandakerveien 99, Oslo",
   gender: genders[0],
   native_language: languages[8],
   target_language: languages[7],
@@ -227,7 +230,7 @@ xavier = User.new(
   email: "xavier.laguna@hotmail.com",
   password: "123456",
   age: "26",
-  address: "Ronda de Sant Pere, 25, 08010 Barcelona, Spain",
+  address: "Ronda de Sant Pere, 25, Barcelona",
   gender: genders[1],
   native_language: languages[10],
   target_language: languages[6],
@@ -244,7 +247,7 @@ matis = User.new(
   email: "matis_1990@gmailmail.com",
   password: "123456",
   age: "23",
-  address: "Lvovo g. 38, Vilnius 09307, Lithuania",
+  address: "Vilnius",
   gender: genders[1],
   native_language: languages[6],
   target_language: languages[10],
@@ -261,7 +264,7 @@ sergey = User.new(
   email: "sergey.tomatov@gmailmail.com",
   password: "123456",
   age: "28",
-  address: "Tverskaya St, 4, Moscow, Russia",
+  address: "Tverskaya St 4, Moscow",
   gender: genders[1],
   native_language: languages[9],
   target_language: languages[1],
@@ -278,7 +281,7 @@ ebba = User.new(
   email: "ebba67434@hotmail.com",
   password: "123456",
   age: "23",
-  address: "Augustenborgsgatan 5, 214 47 Malmö, Sweden",
+  address: "Augustenborgsgatan 5, Malmö",
   gender: genders[0],
   native_language: languages[11],
   target_language: languages[3],
