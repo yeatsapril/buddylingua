@@ -15,9 +15,9 @@
             <div class="b-card-action">            
               <p class="mt-2" style="cursor: pointer" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>"><i class="far fa-comment"></i></p>
               <span style="margin-left: 10rem;">            
-              <i><%= link_to '', user_match_path(user.id), class: "far fa-trash-alt b-card-action", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?" }%></i>
+              <i><%= link_to '', user_match_path(user), class: "far fa-trash-alt b-card-action", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?" }%></i>
             </span>
-          </div>          
+          </div>         
         </div>
     </div>
   </div>
