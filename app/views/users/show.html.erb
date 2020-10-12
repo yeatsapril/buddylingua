@@ -62,7 +62,7 @@
       </div>
 
       <div class="tab-content">
-        <div class="tab-pane active" id="profile" role="tabpanel" aria-label="profile-tab">
+        <div class="tab-pane active fade show" id="profile" role="tabpanel" aria-label="profile-tab">
           <div class="mt-3 ml-5 mb-3">
             <% if @user.description.nil?%>
               <h6 class="o-2">SELF INTRODUCTION</h6>
@@ -104,7 +104,7 @@
         </div>
 
         <%# buddies tab %>
-        <div class="tab-pane" id="buddies" role="tabpanel" aria-label="buddies-tab">
+        <div class="tab-pane fade" id="buddies" role="tabpanel" aria-label="buddies-tab">
             <%# buddies cards and the chat are in this partial folder %>
             <%= render 'shared/tab_items', user: @user %>
         </div>
