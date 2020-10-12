@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
-  before_action :set_user_match, only: %i[create]
+  before_action :set_user_match, only: %i[create destroy]
+  before_action :set_match, only: %i[destroy]
 
   def create
     @match = Match.new
@@ -14,9 +15,20 @@ class MatchesController < ApplicationController
     redirect_to users_path
   end
 
-  private
+  def destroy 
+    @match.destroy
+    flash[:alert] = "Match deleted"
+    redirect_to request.referrer || root_url      
+  end
+
+   private
 
   def set_user_match
     @user = User.find(params[:user_id])
   end
+
+  def set_match    
+    @match = Match.find_by(user_2_id:@user.id)
+  end
+
 end
