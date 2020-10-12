@@ -1,6 +1,11 @@
 import consumer from "./consumer";
 
 const initChatroomCable = () => {
+
+  if (window.location.hash) {
+    $('ul.nav a[href="#buddies"]').tab('show');
+  }
+
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
     const id = messagesContainer.dataset.chatroomId;
