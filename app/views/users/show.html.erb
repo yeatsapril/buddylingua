@@ -1,7 +1,7 @@
-<div class="container-fluid">
-  <div class="row mb-3">
+<div class="container-fluid" style="height:100%">
+  <div class="row mb-3" > 
     <%# left column %>
-    <div class="card p-5 mt-5 ml-5 bg-transparent rounded text-center" style="height:765px; border-right: 4px solid rgba(191, 191, 191, 0.2); border-bottom: none; border-top: none; border-left: none;">
+    <div class="card p-5 mt-5 ml-5 bg-transparent rounded text-center" style="border-right: 4px solid rgba(191, 191, 191, 0.2); border-bottom: none; border-top: none; border-left: none;">
      <div>
        <% if @user.photo.attached? %>
        <%= image_tag @user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
