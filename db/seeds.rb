@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-Match.destroy_all
-User.destroy_all
-Language.destroy_all
-Gender.destroy_all
-Interest.destroy_all
+# Match.destroy_all
+# User.destroy_all
+# Language.destroy_all
+# Gender.destroy_all
+# Interest.destroy_all
 
 
 languages = []
@@ -60,7 +60,6 @@ User.create(
   email: "test@test.com",
   password: "123456",
   age: "19",
- 
   address: "Turisthotellvegen 6, Lillehammer",
   gender: genders[0],
   native_language: languages[10],
@@ -85,7 +84,7 @@ anders = User.new(
   target_language_level: "4",
   description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian 😀")
   
-  anders.photo.attach(io: name_anders, filename: 'anders.jpg', content_type: 'image/jpg')
+
   anders.save
   puts "Completed user #{User.last.name}!"
   
@@ -102,7 +101,7 @@ jacqueline = User.new(
   target_language_level: "3",
   description: "Je m'appelle Jacqueline, J'habite à Paris. Enchanté de faire votre connaissance!")
   
-  jacqueline.photo.attach(io: name_jacqueline, filename: 'jacqueline.jpg', content_type: 'image/jpg')
+
   jacqueline.save
   puts "Completed user #{User.last.name}!"
 
@@ -200,7 +199,7 @@ tomek = User.new(
   gender: genders[1],
   native_language: languages[8],
   target_language: languages[10],
-  target_language_level: rand(1..3),
+  target_language_level: "5",
   description: "Hello! My name is Tomasz but my friends call me Tomek. I am happy to help you with learning the Polish language!")
 
   tomek.photo.attach(io: name_tomek, filename: 'tomek.jpg', content_type: 'image/jpg')
