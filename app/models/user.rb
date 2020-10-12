@@ -41,17 +41,22 @@ class User < ApplicationRecord
   def buddies?
     buddies.include?(@user)
   end
-  
+
 
   def matches
     # retrieveing all the matches that this user is a a part of
     Match.where('user_1_id = :id OR user_2_id = :id', { id: id })
   end
 
+  def potential_buddies
+    User.where.not(id: self).where.not(id: self.buddies).includes(:native_language, :target_language, :interests)
+  end
+
   def find_match(user)
     match = matches
     match.where('user_1_id = :id OR user_2_id = :id', { id: user.id })
   end
+
 
   def match_percentage(user)
     #compare self to user
@@ -66,10 +71,10 @@ class User < ApplicationRecord
 
     score = 0
 
-    if native_language == user.target_language
+    if native_language_id == user.target_language_id
       score += 35
     end
-    if target_language == user.native_language
+    if target_language_id == user.native_language_id
       score += 35
     end
 
