@@ -76,14 +76,21 @@
             <% end %>
           </div>
           <br>
+          
 
           <div class="ml-5 my-3">
             <h6 class="o-2 my-4">SPEAKS</h6>
-            <span class="green-bold"><%= @native_language.capitalize %></span> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %>
+            <span class="grey-box-list"><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
           </div>
           <br>
 
-          <div class="ml-5">
+          <div class="ml-5 my-3">
+            <h6 class="o-2 my-4">WANTS TO LEARN</h6>
+            <span class="grey-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
+          </div>
+          <br>
+        
+          <div class="ml-5 my-3">
             <% if @user.description.nil? %>
               <h6 class="o-2 my-4">INTERESTS</h6>
               <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></p>
@@ -95,13 +102,9 @@
               <%= render 'shared/interests_grey_boxes', interests: @interests %>
             <% end %>
           </div>
-          <br>
-
-          <div class="ml-5">
-            <h6 class="o-2 my-4">WANTS TO LEARN</h6>
-            <span class="grey-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
           </div>
-        </div>
+          <br>
+          
 
         <%# buddies tab %>
         <div class="tab-pane fade" id="buddies" role="tabpanel" aria-label="buddies-tab">
