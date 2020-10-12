@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def show
     # testdata
+    if @user.buddies != []
+      set_session_buddy
+    end
 
     @interests = []
     @user.interests.each do |interest|
@@ -18,10 +21,6 @@ class UsersController < ApplicationController
     @native_language = @user.native_language.name
     @target_language = @user.target_language.name
     @message = Message.new
-
-    if @user.buddies
-      set_session_buddy
-    end
   end
 
   def edit; end
