@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap"
+import { setUpTwilio } from "../plugins/twilio"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // websocket for chat
@@ -36,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
+  setUpTwilio();
 });

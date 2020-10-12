@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    setup_twilio_tokens
     # testdata
     @interests = []
     @user.interests.each do |interest|
@@ -62,6 +63,26 @@ class UsersController < ApplicationController
       # @users = User.where(interest_id: session[:filter_option])
     end
     @users = @users.sort_by { |user| -current_user.match_percentage(user) }
+  end
+
+  def setup_twilio_tokens
+    #if not me, then nothing further to do.
+    #if its not me, then find the match with me.
+    #then, generate the token
+    @video_tokens = {}
+    return unless current_user == @user
+
+
+    twilio = TwilioService.new
+    current_user.matches.each do |match|
+      token = twilio.generate_token(match, current_user)
+      user = match.other_user(current_user)
+      @video_tokens[user.id] =
+        {
+          token: token,
+          room: "video-#{match.id}"
+        }
+    end
   end
 
 end
