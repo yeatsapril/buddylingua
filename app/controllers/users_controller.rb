@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     # testdata
+
     @interests = []
     @user.interests.each do |interest|
       @interests.push(interest.name)
