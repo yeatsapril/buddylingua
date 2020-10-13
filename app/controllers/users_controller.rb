@@ -44,14 +44,22 @@ class UsersController < ApplicationController
   private
 
   def set_session_buddy
-    if @user.buddies
-      if session[:buddy].nil?
-        session[:buddy] = @user.buddies.first
-      elsif @user.find_match(session[:buddy]).ids == []
-        session[:buddy] = @user.buddies.first
-      else
-        session[:buddy]
-      end
+    # if there is no current chat session
+    if session[:buddy].nil?
+      # set the session to the first buddy
+      @buddy = @user.buddies.first
+    else
+      # else set the chat to the correct buddy
+      @buddy = User.find(session[:buddy])
+    end
+
+    # if the previous session buddy is no longer a buddy
+    if @user.find_match(@buddy).ids == []
+      # set it to the first buddy
+      @buddy = @user.buddies.first
+    else
+      # continue the session with the current buddy
+      @buddy = User.find(session[:buddy])
     end
   end
 
