@@ -5,6 +5,14 @@ class UsersController < ApplicationController
 
   def index
     handle_filters
+
+    buddies = current_user.buddies
+    @markers = buddies.map do |buddy|
+      {
+        lat: buddy.latitude,
+        lng: buddy.longitude
+      }
+    end    
   end
 
   def show
