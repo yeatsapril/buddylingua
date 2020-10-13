@@ -302,7 +302,7 @@ olivia = User.new(
   native_language: languages[2],
   target_language: languages[4],
   target_language_level: "1",
-  description: "Hello! My name is Olivia I am an Italian translator currently living in Manchaster. I'd like to learn German. Feel free to contact me if you're interested in a language exchange 😃" )
+  description: "Hello! My name is Olivia I'm an Italian translator currently living in Manchaster. I'd like to learn German. Feel free to contact me if you're interested in a language exchange 😃" )
 
   olivia.photo.attach(io: name_olivia, filename: 'olivia.jpg', content_type: 'image/jpg')
   olivia.save
