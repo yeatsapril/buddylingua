@@ -1,14 +1,32 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_user, only: %i[show edit update]
+  # before_action :set_session_buddy, only: %i[show]
 
   def index
-    handle_filters
+    handle_filters    
+
+    buddies = current_user.buddies + [current_user]
+    @markers = buddies.map do |buddy|
+      image_url = buddy == current_user ? "orange_cursor.svg" : "purple_pin.svg"
+      {
+        lat: buddy.latitude,
+        lng: buddy.longitude, 
+        image_url: helpers.asset_url(image_url)
+      }      
+    end 
   end
+    
+    
+  
 
   def show
     setup_twilio_tokens
     # testdata
+    if @user.buddies != []
+      set_session_buddy
+    end
+
     @interests = []
     @user.interests.each do |interest|
       @interests.push(interest.name)
@@ -39,6 +57,25 @@ class UsersController < ApplicationController
 
   private
 
+  def set_session_buddy
+    # if there is no current chat session
+    if session[:buddy].nil?
+      # set the session to the first buddy
+      @buddy = @user.buddies.first
+    else
+      # else set the chat to the correct buddy
+      @buddy = User.find(session[:buddy]["id"].to_i)
+      # if the previous session buddy is no longer a buddy
+      if @user.find_match(@buddy).ids == []
+        # set it to the first buddy
+        @buddy = @user.buddies.first
+      else
+        # continue the session with the current buddy
+        @buddy
+      end
+    end
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
@@ -46,7 +83,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:description, :address, :age, :gender_id, :photo, :interest_ids)
   end
-
 
   def handle_filters
     session[:filter] = params[:filter]

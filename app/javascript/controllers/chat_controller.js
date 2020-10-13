@@ -21,7 +21,8 @@ export default class extends ApplicationController {
     // add your code here, if applicable
   }
 
-  updateSuccess() {
+  updateSuccess(event) {
+    $('ul.nav a[href="#buddies"]').tab('show');
   }
   /* Reflex specific lifecycle methods.
    *

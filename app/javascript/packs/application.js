@@ -31,11 +31,14 @@ import { setUpTwilio } from "../plugins/twilio"
 import "controllers"
 import { initChatroomCable } from '../channels/chatroom_channels'
 // js stimulus controller imports
-
+import { initMapbox } from '../plugins/init_mapbox';
+// imports mapbox 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
   setUpTwilio();
+  initMapbox();
+
 });

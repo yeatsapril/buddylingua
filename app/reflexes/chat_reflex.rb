@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ChatReflex < ApplicationReflex
   def update
-    match = element.dataset[:match].to_i
-    @match = User.find(match)
+    # take the user id and set it to a session variable
+    session[:buddy] = { "id" => element.dataset[:match] }
   end
 end
