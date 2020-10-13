@@ -14,7 +14,10 @@
       <%# BELOW HERE IS CODE FOR CHAT  %>
       <% end %>
     </div>
-    <div class="container-chat ml-5 border">
+    <div class="container-chat ml-5">
+    <div class= "container-chat-top"></div>
+    <br>
+    <br>
         <% match = @user.find_match(@buddy) %>
       <div id="messages" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
@@ -22,10 +25,12 @@
         <%= render 'messages/message', message: message %>
         <% end %>
         <%# Chat entry field %>
-        <%= simple_form_for [ @user, match[0], @message ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{User.find(@buddy.id).name}", class: "form-inline" %>
-        <%= f.submit 'Submit', class: "ml-2 button-chat", style: "margin-bottom: 21px" %>
-        <% end %>
+        <div class="entry-field">
+          <%= simple_form_for [ @user, match[0], @message ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message ##{User.find(@buddy.id).name}", class: "form-inline"%>
+          <%= f.submit 'Submit', class: "ml-2 button-chat", style: "margin-bottom: 21px" %>
+          <% end %>
+        </div>
         <%# ABOVE HERE IS CODE FOR CHAT %>
       </div>
     <% end %>
