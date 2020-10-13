@@ -25,10 +25,15 @@ const connectToRoom = (token) => {
 
 const setUpTwilio = () => {
   const $tokens = document.getElementById("twilio-tokens")
+  if (!$tokens) {
+    return
+  }
+
   let tokens = $tokens.dataset.twilioTokens
   if (tokens.length < 1) {
     return
   }
+
   tokens = JSON.parse(tokens)
 
   // we need to find all the buddies call buttons (start video chat)
