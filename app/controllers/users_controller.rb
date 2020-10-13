@@ -61,10 +61,10 @@ class UsersController < ApplicationController
       puts '***hello friends'
       puts session
       puts session[:buddy]
-      puts session[:buddy][:id]
-      puts session[:buddy][:id].to_i
-      puts User.find(session[:buddy][:id].to_i)
-      @buddy = User.find(session[:buddy][:id].to_i)
+      puts session[:buddy]["id"]
+      puts session[:buddy]["id"].to_i
+      puts User.find(session[:buddy]["id"].to_i)
+      @buddy = User.find(session[:buddy]["id"].to_i)
       # if the previous session buddy is no longer a buddy
       if @user.find_match(@buddy).ids == []
         # set it to the first buddy
