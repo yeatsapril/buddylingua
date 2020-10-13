@@ -2,9 +2,6 @@
 class ChatReflex < ApplicationReflex
   def update
     # take the user id and set it to a session variable
-    session[:buddy] = element.dataset[:match]
-    puts '***hello friends'
-    puts session
-    puts session[:buddy]
+    session[:buddy] = { id: element.dataset[:match] }
   end
 end

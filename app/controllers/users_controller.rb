@@ -11,8 +11,8 @@ class UsersController < ApplicationController
       {
         lat: buddy.latitude,
         lng: buddy.longitude
-      }         
-    end    
+      }       
+    end
   end
 
   def show
@@ -58,8 +58,7 @@ class UsersController < ApplicationController
       @buddy = @user.buddies.first
     else
       # else set the chat to the correct buddy
-
-      @buddy = User.find(session[:buddy].to_i)
+      @buddy = User.find(session[:buddy][:id].to_i)
       # if the previous session buddy is no longer a buddy
       if @user.find_match(@buddy).ids == []
         # set it to the first buddy
