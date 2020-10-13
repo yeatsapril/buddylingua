@@ -4,14 +4,14 @@ class UsersController < ApplicationController
   # before_action :set_session_buddy, only: %i[show]
 
   def index
-    handle_filters
+    handle_filters    
 
     buddies = current_user.buddies
     @markers = buddies.map do |buddy|
       {
         lat: buddy.latitude,
         lng: buddy.longitude
-      }
+      }         
     end    
   end
 
