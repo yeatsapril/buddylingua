@@ -76,11 +76,14 @@ class User < ApplicationRecord
       score += 35
     end
 
-    age_diff = (age - user.age).abs
-    if age_diff <= 5
-      score += 15
-    elsif age_diff <= 10
-      score += 7
+    if (user.age != nil) & (age != nil)
+      age_diff = (age - user.age).abs
+      
+      if age_diff <= 5
+        score += 15
+      elsif age_diff <= 10
+        score += 7
+      end
     end
 
     common_interests = (interests & user.interests)
