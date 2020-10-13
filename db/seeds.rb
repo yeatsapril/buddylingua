@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-# Match.destroy_all
-# User.destroy_all
-# Language.destroy_all
-# Gender.destroy_all
-# Interest.destroy_all
+Match.destroy_all
+User.destroy_all
+Language.destroy_all
+Gender.destroy_all
+Interest.destroy_all
 
 
 languages = []
@@ -83,11 +83,11 @@ anders = User.new(
   target_language: languages[8],
   target_language_level: "4",
   description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian 😀")
-  
+
   anders.photo.attach(io: name_anders, filename: 'anders.jpg', content_type: 'image/jpg')
   anders.save
   puts "Completed user #{User.last.name}!"
-  
+
 
 jacqueline = User.new(
   name: "Jacqueline",
@@ -100,7 +100,7 @@ jacqueline = User.new(
   target_language: languages[11],
   target_language_level: "3",
   description: "Je m'appelle Jacqueline, J'habite à Paris. Enchanté de faire votre connaissance!")
-  
+
   jacqueline.photo.attach(io: name_jacqueline, filename: 'jacqueline.jpg', content_type: 'image/jpg')
   jacqueline.save
   puts "Completed user #{User.last.name}!"
@@ -117,7 +117,7 @@ monika = User.new(
   target_language: languages[10],
   target_language_level: "4",
   description: "Hi my name is Monika! I am a friendly and easy-going person. Please let me assist you with learning the Polish language 🙂")
-  
+
   monika.photo.attach(io: name_monika, filename: 'monika.jpg', content_type: 'image/jpg')
   monika.save
   puts "Completed user #{User.last.name}!"
@@ -133,7 +133,7 @@ klaus = User.new(
   target_language: languages[3],
   target_language_level: "1",
   description: "Hello, my name is Klaus and I come from Berlin. I'd like to learn French on the basic level.")
-  
+
   klaus.photo.attach(io: name_klaus, filename: 'klaus.jpg', content_type: 'image/jpg')
   klaus.save
   puts "Completed user #{User.last.name}!"
@@ -150,7 +150,7 @@ sofia = User.new(
   target_language: languages[0],
   target_language_level: "1",
   description: "Hi everyone, my name is Sofia and I come from Sochi. I am happy to help you with learning Russian language.")
-  
+
   sofia.photo.attach(io: name_sofia, filename: 'sofia.jpg', content_type: 'image/jpg')
   sofia.save
   puts "Completed user #{User.last.name}!"
@@ -167,7 +167,7 @@ torstein = User.new(
   target_language: languages[4],
   target_language_level: rand(1..3),
   description: "Hello! I am a Norwegian guy looking to improve my German language skills")
-  
+
   torstein.photo.attach(io: name_torstein, filename: 'torstein.jpg', content_type: 'image/jpg')
   torstein.save
   puts "Completed user #{User.last.name}!"
@@ -184,7 +184,7 @@ karolina = User.new(
   target_language: languages[7],
   target_language_level: "3",
   description: "Hello! My name is Karolina and I'm a Polish student currently living in Norway. I'm free during the weekends and it'd be great to meet you in person if you're too living in Oslo!" )
-  
+
   karolina.photo.attach(io: name_karolina, filename: 'karolina.jpg', content_type: 'image/jpg')
   karolina.save
   puts "Completed user #{User.last.name}!"
@@ -218,7 +218,7 @@ gabriella = User.new(
   target_language: languages[4],
   target_language_level: "3",
   description: "Il mio nome è Gabriella. Vengo dall’Italia. Piacere!")
-  
+
   gabriella.photo.attach(io: name_gabriella, filename: 'gabriella.jpg', content_type: 'image/jpg')
   gabriella.save
   puts "Completed user #{User.last.name}!"
@@ -235,7 +235,7 @@ xavier = User.new(
   target_language: languages[6],
   target_language_level: rand(1..3),
   description: "Hola! Me nombre es Xavier, pero todos me llaman Sasha. Soy de los Barcelona. Encantado de conocerte!")
-  
+
   xavier.photo.attach(io: name_xavier, filename: 'xavier.jpg', content_type: 'image/jpg')
   xavier.save
   puts "Completed user #{User.last.name}!"
@@ -252,12 +252,12 @@ matis = User.new(
   target_language: languages[10],
   target_language_level: "3",
   description: "I am a Lithuanian student currently living in Vilnius. I have grown up with English and Lithuanian, and I am fluent in all two langauges. I am also conversational in Spanish.")
-  
+
   matis.photo.attach(io: name_matis, filename: 'matis.jpg', content_type: 'image/jpg')
   matis.save
   puts "Completed user #{User.last.name}!"
 
-  
+
 sergey = User.new(
   name: "Sergey",
   email: "sergey.tomatov@gmailmail.com",
@@ -291,7 +291,7 @@ ebba = User.new(
   ebba.save
   puts "Completed user #{User.last.name}!"
 
-    
+
 olivia = User.new(
   name: "Olivia",
   email: "johnson.olivia@hotmail.com",
@@ -320,7 +320,7 @@ aleksandra = User.new(
   target_language: languages[7],
   target_language_level: "4",
   description: "Hi! My name is Ola and I am currently living in Lublin, Poland. I joined BuddyLingua to practice my Russian language. Nice to meet you all 😎")
-  
+
   aleksandra.photo.attach(io: name_aleksandra, filename: 'aleksandra.jpg', content_type: 'image/jpg')
   aleksandra.save
   puts "Completed user #{User.last.name}!"
