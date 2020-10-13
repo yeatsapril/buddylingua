@@ -106,9 +106,9 @@
         <%# buddies tab %>
         <div class="tab-pane fade" id="buddies" role="tabpanel" aria-label="buddies-tab">
             <%# buddies cards and the chat are in this partial folder %>
+            <div id="remote-video"></div>
             <%= render 'shared/tab_items', user: @user %>
             <div id="twilio-tokens" data-twilio-tokens="<%= JSON.generate(@video_tokens) %>"></div>
-            <div id="remote-video" style="height: 200px; width: 300px; background-color: black;"></div>
         </div>
       </div>
     </div>
