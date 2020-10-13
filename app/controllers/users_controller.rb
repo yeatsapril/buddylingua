@@ -72,7 +72,6 @@ class UsersController < ApplicationController
     @video_tokens = {}
     return unless current_user == @user
 
-
     twilio = TwilioService.new
     current_user.matches.each do |match|
       token = twilio.generate_token(match, current_user)
@@ -84,5 +83,4 @@ class UsersController < ApplicationController
         }
     end
   end
-
 end
