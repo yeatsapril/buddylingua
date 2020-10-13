@@ -6,14 +6,19 @@ class UsersController < ApplicationController
   def index
     handle_filters    
 
-    buddies = current_user.buddies
+    buddies = current_user.buddies + [current_user]
     @markers = buddies.map do |buddy|
+      image_url = buddy == current_user ? "orange_cursor.svg" : "purple_pin.svg"
       {
         lat: buddy.latitude,
-        lng: buddy.longitude
-      }       
-    end
+        lng: buddy.longitude, 
+        image_url: helpers.asset_url(image_url)
+      }      
+    end 
   end
+    
+    
+  
 
   def show
     # testdata
