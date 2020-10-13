@@ -76,7 +76,7 @@ class User < ApplicationRecord
       score += 35
     end
 
-    if age != nil
+    if (user.age != nil) & (age != nil)
       age_diff = (age - user.age).abs
       
       if age_diff <= 5
