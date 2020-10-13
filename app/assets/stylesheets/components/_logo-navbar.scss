@@ -1,9 +1,24 @@
 .logo-navbar {
-  background-image: image-url("logo.png");
+  background-image: image-url("logo-navbar.png");
   width: 30px;
   height: 30px;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
   background-position: center;
+  position: relative;
+}
+
+
+.logo-text {
+  background-image: image-url("logo-text-white.svg");
+  height: 18px;
+  width: 107px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  position: absolute;
+  left: 57px;
+  top: 22px;
 }
