@@ -1,5 +1,5 @@
 meta_product_name: "Buddylingua"
 meta_title: "Buddylingua - Meet a buddy, learn a language."
 meta_description: "Get started with your language journey today"
-meta_image: "decorator.png" # should exist in `app/assets/images/`
+meta_image: "meta.png" # should exist in `app/assets/images/`
 
