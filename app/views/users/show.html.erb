@@ -90,7 +90,7 @@
             <% end %>
           </div>
           <br>
-          
+
 
           <div class="ml-5 my-3">
             <h6 class="o-2 my-4">SPEAKS</h6>
@@ -103,7 +103,7 @@
             <span class="grey-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
           </div>
           <br>
-        
+
           <div class="ml-5">
             <% if @user.description.nil? %>
               <h6 class="o-2 my-4">INTERESTS</h6>
@@ -118,7 +118,7 @@
           </div>
           </div>
           <br>
-          
+
 
         <%# buddies tab %>
         <%# the params[:focus] is required to keep the user on the correct tab when chatting %>
@@ -128,8 +128,8 @@
           <div class="tab-pane fade" id="buddies" role="tabpanel" aria-label="buddies-tab">
         <% end %>
           <%# buddies cards and the chat are in this partial folder %>
-          <div id="remote-video"></div>
           <%= render 'shared/tab_items', user: @user %>
+          <div id="remote-video" class="video-styling" ></div>
           <div id="twilio-tokens" data-twilio-tokens="<%= JSON.generate(@video_tokens) %>"></div>
         </div>
       </div>
