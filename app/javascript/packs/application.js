@@ -33,6 +33,8 @@ import { initChatroomCable } from '../channels/chatroom_channels'
 // js stimulus controller imports
 import { initMapbox } from '../plugins/init_mapbox';
 // imports mapbox
+import { loadDynamicBannerText } from '../components/banner';
+// imports the typed js
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,5 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   setUpTwilio();
   initMapbox();
-
+  loadDynamicBannerText();
 });
+

@@ -1,0 +1,19 @@
+.video-styling {
+  position: relative;
+  min-width: 640px;
+  max-width: 640px;
+  min-height: 480px;
+  max-height: 480px;
+  border-radius: 12px;
+  border: 9px solid #7E27C4;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 2px 0px rgba(194, 121, 253, 0.2);
+  display: none;
+}
+
+.video-styling h1 {
+  position: absolute;
+  color: #CBA9E7;
+  top: 190px;
+  left: 40px;
+}

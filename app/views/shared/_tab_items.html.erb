@@ -15,10 +15,19 @@
       <% end %>
     </div>
     <div class="container-chat ml-5">
-    <div class= "container-chat-top"></div>
+      <% match = @user.find_match(@buddy) %>
+    <div class= "container-chat-top">
+      <div class="chat-top-content  d-flex justifty-space-between">
+      <% if @buddy.photo.attached? %>
+      <%= image_tag @buddy.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
+      <% else %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar avatar-large", alt: "avatar" %>
+      <% end %>
+      <p style="font-size: 20px";> <%= @buddy.name %> </p>
+      </div>
+    </div>
     <br>
     <br>
-        <% match = @user.find_match(@buddy) %>
       <div id="messages" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
         <%# Current messages %>
@@ -27,8 +36,8 @@
         <%# Chat entry field %>
         <div class="entry-field">
           <%= simple_form_for [ @user, match[0], @message ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-          <%= f.input :content, label: false, placeholder: "Message ##{User.find(@buddy.id).name}", class: "form-inline"%>
-          <%= f.submit 'Submit', class: "ml-2 button-chat", style: "margin-bottom: 21px" %>
+          <%= f.input :content, as: :string, label: false, placeholder: "Type a message..", class: "form-inline" %>
+          <%= f.submit 'Send', class: "ml-4 button-chat", style: "margin-bottom: 2px" %>
           <% end %>
         </div>
         <%# ABOVE HERE IS CODE FOR CHAT %>

@@ -8,27 +8,27 @@ class MatchesController < ApplicationController
     @match.user_2 = @user
 
     if @match.save
-      flash[:notice] = "Added #{@user.name} as a buddy!"
+      flash[:notice] = "Added #{@user.name} as a buddy!
+                        Head to your profile and start chat chatting!"
     else
       flash[:alert] = "Failed to add #{@user.name} as a buddy."
     end
     redirect_to users_path
   end
 
-  def destroy    
+  def destroy
     Match.destroy(@match.ids[0])
     flash[:alert] = "Match deleted"
-    redirect_to request.referrer || root_url 
+    redirect_to request.referrer || root_url
   end
 
-   private
+  private
 
   def set_user_match
     @user = User.find(params[:user_id])
   end
 
-  def set_match   
+  def set_match
     @match = @user.find_match(current_user)
   end
-
 end
