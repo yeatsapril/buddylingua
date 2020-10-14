@@ -1,26 +1,60 @@
 const { connect } = require('twilio-video');
 
+const showVideo = (track) => {
+  const videoElement = document.getElementById('remote-video')
+  videoElement.innerHTML = ""
+  videoElement.appendChild(track.attach());
+}
+
 const buddyConnected = (buddy) => {
   console.log("buddy connected")
   buddy.tracks.forEach(publication => {
     if (publication.isSubscribed) {
       const track = publication.track;
-      document.getElementById('remote-video').appendChild(track.attach());
+      showVideo(track);
     }
   });
 
   buddy.on('trackSubscribed', track => {
-    document.getElementById('remote-video').appendChild(track.attach());
+    showVideo(track);
+  });
+}
+
+const selfConnected = (room) => {
+  room.participants.forEach(participant => {
+    participant.tracks.forEach(publication => {
+      if (publication.track) {
+        showVideo(publication.track);
+      }
+    });
+
+   participant.on('trackSubscribed', track => {
+      showVideo(track);
+    });
   });
 }
 
 const connectToRoom = (token) => {
-  connect( token.token, { name: token.room }).then(room => {
+  connect( token.token, {
+    name: token.room,
+    audio: true,
+    video: { width: 640 }
+  }).then(room => {
     console.log(`Successfully joined a Room: ${room}`);
+    selfConnected(room);
     room.on('participantConnected', buddyConnected);
   }, error => {
     console.error(`Unable to connect to Room: ${error.message}`);
   });
+}
+
+const setVideoVisible = (visible) => {
+  const element = document.getElementById("remote-video")
+  if (visible) {
+    element.style.display = "block"
+  } else {
+    element.style.display = "none"
+  }
 }
 
 const setUpTwilio = () => {
@@ -43,6 +77,7 @@ const setUpTwilio = () => {
     button.addEventListener('click', (e) => {
       const userId = button.dataset.userId
       const token = tokens[userId]
+      setVideoVisible(true)
       connectToRoom(token)
     })
   })
