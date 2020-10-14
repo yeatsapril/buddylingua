@@ -1,2 +1,37 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g xmlns="http://www.w3.org/2000/svg"><path d="m91 151h-30v-15c0-41.353 33.647-75 75-75h15v30h-15c-24.814 0-45 20.186-45 45z" fill="#7e27c4" data-original="#66b3ff" style="" class=""/><path d="m451 151h-30v-15c0-24.814-20.186-45-45-45h-15v-30h15c41.353 0 75 33.647 75 75z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m151 481h-15c-41.353 0-75-33.647-75-75v-15h30v15c0 24.814 20.186 45 45 45h15z" fill="#7e27c4" data-original="#66b3ff" style="" class=""/><path d="m376 481h-15v-30h15c24.814 0 45-20.186 45-45v-15h30v15c0 41.353-33.647 75-75 75z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m256 91c24.814 0 45-20.186 45-45s-20.186-46-45-46-45 21.186-45 46 20.186 45 45 45z" fill="#e7ccff" data-original="#e6f7ff" style="" class=""/><circle cx="256" cy="376" fill="#e7ccff" r="45" data-original="#e6f7ff" style="" class=""/><g fill="#cce6ff"><path d="m301 46c0-24.814-20.186-46-45-46v91c24.814 0 45-20.186 45-45z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m301 376c0-24.814-20.186-45-45-45v90c24.814 0 45-20.186 45-45z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m256 91c-41.353 0-75 33.647-75 75v15h75 75v-15c0-41.353-33.647-75-75-75z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m256 421c-41.353 0-75 33.647-75 75v16h75 75v-16c0-41.353-33.647-75-75-75z" fill="#a167d1" data-original="#cce6ff" style="" class=""/></g><path d="m331 166c0-41.353-33.647-75-75-75v90h75z" fill="#a167d1" data-original="#b3ccff" style="" class=""/><path d="m331 496c0-41.353-33.647-75-75-75v91h75z" fill="#a167d1" data-original="#b3ccff" style="" class=""/><circle cx="76" cy="226" fill="#e7ccff" r="45" data-original="#e6f7ff" style="" class=""/><path d="m121 226c0-24.814-20.186-45-45-45v90c24.814 0 45-20.186 45-45z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m76 271c-41.353 0-76 33.647-76 75v15h76 75v-15c0-41.353-33.647-75-75-75z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m151 346c0-41.353-33.647-75-75-75v90h75z" fill="#a167d1" data-original="#b3ccff" style="" class=""/><circle cx="436" cy="226" fill="#e7ccff" r="45" data-original="#e6f7ff" style="" class=""/><path d="m481 226c0-24.814-20.186-45-45-45v90c24.814 0 45-20.186 45-45z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m436 271c-41.353 0-75 33.647-75 75v15h75 76v-15c0-41.353-34.647-75-76-75z" fill="#a167d1" data-original="#cce6ff" style="" class=""/><path d="m512 346c0-41.353-34.647-75-76-75v90h76z" fill="#a167d1" data-original="#b3ccff" style="" class=""/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:svgjs="http://svgjs.com/svgjs"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+	 style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#7E27C4;}
+	.st1{fill:#FFE2BD;}
+	.st2{fill:#A167D1;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M91,151H61v-15c0-41.4,33.6-75,75-75h15v30h-15c-24.8,0-45,20.2-45,45V151z"/>
+		<path class="st0" d="M451,151h-30v-15c0-24.8-20.2-45-45-45h-15V61h15c41.4,0,75,33.6,75,75V151z"/>
+		<path class="st0" d="M151,481h-15c-41.4,0-75-33.6-75-75v-15h30v15c0,24.8,20.2,45,45,45h15V481z"/>
+		<path class="st0" d="M376,481h-15v-30h15c24.8,0,45-20.2,45-45v-15h30v15C451,447.4,417.4,481,376,481z"/>
+		<path class="st1" d="M256,91c24.8,0,45-20.2,45-45S280.8,0,256,0s-45,21.2-45,46S231.2,91,256,91z"/>
+		<circle class="st1" cx="256" cy="376" r="45"/>
+		<g>
+			<path class="st0" d="M301,46c0-24.8-20.2-46-45-46v91C280.8,91,301,70.8,301,46z"/>
+			<path class="st0" d="M301,376c0-24.8-20.2-45-45-45v90C280.8,421,301,400.8,301,376z"/>
+			<path class="st2" d="M256,91c-41.4,0-75,33.6-75,75v15h75h75v-15C331,124.6,297.4,91,256,91z"/>
+			<path class="st2" d="M256,421c-41.4,0-75,33.6-75,75v16h75h75v-16C331,454.6,297.4,421,256,421z"/>
+		</g>
+		<path class="st2" d="M331,166c0-41.4-33.6-75-75-75v90h75V166z"/>
+		<path class="st2" d="M331,496c0-41.4-33.6-75-75-75v91h75V496z"/>
+		<circle class="st1" cx="76" cy="226" r="45"/>
+		<path class="st0" d="M121,226c0-24.8-20.2-45-45-45v90C100.8,271,121,250.8,121,226z"/>
+		<path class="st2" d="M76,271c-41.4,0-76,33.6-76,75v15h76h75v-15C151,304.6,117.4,271,76,271z"/>
+		<path class="st2" d="M151,346c0-41.4-33.6-75-75-75v90h75V346z"/>
+		<circle class="st1" cx="436" cy="226" r="45"/>
+		<path class="st0" d="M481,226c0-24.8-20.2-45-45-45v90C460.8,271,481,250.8,481,226z"/>
+		<path class="st2" d="M436,271c-41.4,0-75,33.6-75,75v15h75h76v-15C512,304.6,477.4,271,436,271z"/>
+		<path class="st2" d="M512,346c0-41.4-34.6-75-76-75v90h76V346z"/>
+	</g>
+</g>
+</svg>

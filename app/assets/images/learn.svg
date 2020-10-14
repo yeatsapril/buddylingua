@@ -1,2 +1,31 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g xmlns="http://www.w3.org/2000/svg"><path d="m211 0c-5.153-.009-9.983.914-15 1.318-82.938 6.686-146.548 67.922-161.323 141.856-5.684 28.462-4.834 56.602 2.52 83.76l-37.197 62.256 61 43.462v87.348h60v92h75 135v-63.216c0-61.45 14.985-126.533 45.806-198.955 9.419-22.134 14.194-45.63 14.194-69.829 0-98.712-79.601-179.811-180-180z" fill="#cba9e7" data-original="#66b3ff" style="" class=""/><path d="m331 448.784c0-61.45 14.985-126.533 45.806-198.955 9.419-22.134 14.194-45.63 14.194-69.829 0-98.712-79.601-179.811-180-180-5.153-.009-9.983.914-15 1.318v510.682h135z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m256 180h181v30h-181z" fill="#e5d4f3" data-original="#cce6ff" style="" class=""/><path d="m467 240c-24.814 0-45-20.186-45-45s20.186-45 45-45 45 20.186 45 45-20.186 45-45 45z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m435.184 304.395-34.395-34.395h-204.789v-30h217.211l43.184 43.184z" fill="#e5d4f3" data-original="#cce6ff" style="" class=""/><path d="m467 360c-24.814 0-45-20.186-45-45s20.186-45 45-45 45 20.186 45 45-20.186 45-45 45z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m413.211 150h-217.211v-30h204.789l34.395-34.394 21.211 21.21z" fill="#e5d4f3" data-original="#cce6ff" style="" class=""/><path d="m467 120c-24.814 0-45-20.186-45-45s20.186-45 45-45 45 20.186 45 45-20.186 45-45 45z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><circle cx="196" cy="195" fill="#f6ecff" r="75" data-original="#e6f7ff" style="" class=""/><path d="m271 195c0-41.353-33.647-75-75-75v150c41.353 0 75-33.647 75-75z" fill="#e5d4f3" data-original="#cce6ff" style="" class=""/><circle cx="196" cy="195" fill="#cba9e7" r="45" data-original="#66b3ff" style="" class=""/><path d="m241 195c0-24.813-20.187-45-45-45v90c24.814 0 45-20.187 45-45z" fill="#7e27c4" data-original="#4d88ff" style="" class=""/><path d="m196 180h-15v30h15 15v-30z" fill="#f6ecff" data-original="#e6f7ff" style="" class=""/><path d="m196 180h15v30h-15z" fill="#e5d4f3" data-original="#cce6ff" style="" class=""/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:svgjs="http://svgjs.com/svgjs"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+	 style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CBA9E7;}
+	.st1{fill:#7E27C4;}
+	.st2{fill:#FFE2BD;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M211,0c-5.2,0-10,0.9-15,1.3C113.1,8,49.5,69.2,34.7,143.2c-5.7,28.5-4.8,56.6,2.5,83.8L0,289.2l61,43.5V420
+			h60v92h75h135v-63.2c0-61.5,15-126.5,45.8-199c9.4-22.1,14.2-45.6,14.2-69.8C391,81.3,311.4,0.2,211,0z"/>
+		<path class="st1" d="M331,448.8c0-61.5,15-126.5,45.8-199c9.4-22.1,14.2-45.6,14.2-69.8C391,81.3,311.4,0.2,211,0
+			c-5.2,0-10,0.9-15,1.3V512h135V448.8z"/>
+		<path class="st2" d="M256,180h181v30H256V180z"/>
+		<path class="st1" d="M467,240c-24.8,0-45-20.2-45-45s20.2-45,45-45s45,20.2,45,45S491.8,240,467,240z"/>
+		<path class="st2" d="M435.2,304.4L400.8,270H196v-30h217.2l43.2,43.2L435.2,304.4z"/>
+		<path class="st1" d="M467,360c-24.8,0-45-20.2-45-45s20.2-45,45-45s45,20.2,45,45S491.8,360,467,360z"/>
+		<path class="st2" d="M413.2,150H196v-30h204.8l34.4-34.4l21.2,21.2L413.2,150z"/>
+		<path class="st1" d="M467,120c-24.8,0-45-20.2-45-45s20.2-45,45-45s45,20.2,45,45S491.8,120,467,120z"/>
+		<circle class="st2" cx="196" cy="195" r="75"/>
+		<path class="st2" d="M271,195c0-41.4-33.6-75-75-75v150C237.4,270,271,236.4,271,195z"/>
+		<circle class="st0" cx="196" cy="195" r="45"/>
+		<path class="st1" d="M241,195c0-24.8-20.2-45-45-45v90C220.8,240,241,219.8,241,195z"/>
+		<path class="st2" d="M196,180h-15v30h15h15v-30H196z"/>
+		<path class="st2" d="M196,180h15v30h-15V180z"/>
+	</g>
+</g>
+</svg>
