@@ -7,3 +7,18 @@
   height: 100vh;
   // width: 100vw;
 }
+
+.hero {
+  margin-right: 350px;
+  display: flex;
+  flex-direction: column; 
+}
+
+#banner-typed-text {
+  font-size: 40px;
+  font-weight: 400;
+  height: 100px;
+  display: inline-block;
+  flex-grow: 0;
+  max-width: 530px;
+}
