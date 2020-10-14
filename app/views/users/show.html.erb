@@ -28,16 +28,18 @@
           <div style="background-color: white" class="mt-2">
             <div>
               <p><i class="far fa-envelope pr-2" style="color: #FFA024;">&nbsp;</i><%= @user.email %> </p>
-              <p><i class="fas fa-map-pin pr-2" style="color: #FFA024;">&nbsp;</i><%= @user.address %> </p>
+              <p><i class="fas fa-map-pin pr-2 mb-3" style="color: #FFA024;">&nbsp;</i><%= @user.address %> </p>
 
 
                 <% if @user != current_user && !current_user.buddies.include?(@user) %>
                   <div>
-                    <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange", style:"margin.top: 100px;", method: :post %>
+                    <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange position-back", style:"margin.top: 100px;", method: :post %>
                   </div>
                   <br>
                   <div>
-                    <%=link_to "Back", users_path, class: "button-orange", style:"margin.top: 100px;" %>
+                    <%=link_to users_path, class: "button-round", style:"margin.top: 100px;" do %>
+                      <i class="fas fa-arrow-left"></i>
+                    <% end %>
                   </div>
                 <% end %>
             </div>
