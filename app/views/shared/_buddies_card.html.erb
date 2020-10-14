@@ -1,8 +1,8 @@
-<div class="b-container">
-  <div class="b-cards">
-    <div class="b-card ml-0">
+<div class="container p-0">
+  <div class="b-cards ml-0 mt-2 mb-4 mr-4">
+    <div class="b-card">
         <% if user.photo.attached? %>
-          <%= image_tag user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
+          <%= image_tag user.photo, class: "avatar avatar-medium-profile", alt: "avatar", style: 'object-fit: cover;' %>
         <% else %>
           <%= image_tag('https://source.unsplash.com/random/120x120')%>
         <% end %>
@@ -10,14 +10,13 @@
 
           <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
           <p><%= user.address %></p>
-            <div class="b-card-action">
+            <div class="d-flex mt-2 ml-1">
+             <div class="b-circle"></div>
             <%# pluck the buddy's id with reflex from here %>
-              <p class="mt-2" style="cursor: pointer" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>"><i class="far fa-comment"></i></p>
-              <p class="mt-2 video-call-button" style="cursor: pointer"
-              data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>
-              <span style="margin-left: 10rem;">
-              <i><%= link_to '', user_match_path(user), class: "far fa-trash-alt b-card-action", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?" }%></i>
-            </span>
+              <p class="b-card-action-1" style="cursor: pointer; position: relative" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>"><i class="fas fa-comment"></i></p>
+              <p class="video-call-button b-card-action-2" style="cursor: pointer"
+              data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>          
+              <p><i><%= link_to '', user_match_path(user), class: "fas fa-trash b-card-action-3", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?"}%></i></p>
           </div>
       </div>
     </div>
