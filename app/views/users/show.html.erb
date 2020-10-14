@@ -23,8 +23,8 @@
 
           <div style="background-color: white" class="mt-2">
             <div>
-              <p><i class="far fa-envelope pr-2">&nbsp;</i><%= @user.email %> </p>
-              <p><i class="fas fa-map-pin pr-2">&nbsp;</i><%= @user.address %> </p>
+              <p><i class="far fa-envelope pr-2" style="color: #FFA024;">&nbsp;</i><%= @user.email %> </p>
+              <p><i class="fas fa-map-pin pr-2" style="color: #FFA024;">&nbsp;</i><%= @user.address %> </p>
 
 
                 <% if @user != current_user && !current_user.buddies.include?(@user) %>
@@ -97,13 +97,13 @@
 
             <div class="ml-5 my-3">
               <h6 class="o-2 my-4">SPEAKS</h6>
-              <span class="grey-box-list"><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
+              <span class="purple-box-list"><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
             </div>
             <br>
 
             <div class="ml-5 my-3">
               <h6 class="o-2 my-4">WANTS TO LEARN</h6>
-              <span class="grey-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
+              <span class="purple-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
             </div>
             <br>
           
@@ -113,10 +113,10 @@
                 <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></p>
               <% elsif @user == current_user %>
                 <h6 class="o-2 my-4">INTERESTS&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></h6>
-                <%= render 'shared/interests_grey_boxes', interests: @interests %>
+                <%= render 'shared/interests_purple_boxes', interests: @interests %>
               <% elsif @user != current_user %>
                 <h6 class="o-2 my-4">INTERESTS&nbsp; &nbsp; </h6>
-                <%= render 'shared/interests_grey_boxes', interests: @interests %>
+                <%= render 'shared/interests_purple_boxes', interests: @interests %>
               <% end %>
             </div>
             </div>
