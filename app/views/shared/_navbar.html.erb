@@ -6,8 +6,8 @@
       <% end %>
 
     <div class="d-flex">
-      <div class="grey-box-list mb-5" id="messages-notif" data-reflex="click->NotificationReflex#update">
-         <p>Messages</p>
+      <div class="grey-box-list mb-5">
+        <p id="messages-notif" style="cursor: pointer; position: relative"><i> <%= link_to '', user_path(current_user, focus: "buddies"), class: "fas fa-envelope b-card-action-1", data: { target: "notification.mail" } %></i></p>
       </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
