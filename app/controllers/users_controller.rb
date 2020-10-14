@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     handle_filters    
 
-    buddies = current_user.buddies + [current_user]
+    buddies = User.all + [current_user]
     @markers = buddies.map do |buddy|
       image_url = buddy == current_user ? "orange_cursor.svg" : "purple_pin.svg"
       {
