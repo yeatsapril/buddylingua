@@ -1,6 +1,9 @@
 import Typed from 'typed.js';
 
 const loadDynamicBannerText = () => {
+  if (!document.getElementById("banner-typed-text")) {
+    return
+  }
   new Typed('#banner-typed-text', {
     strings: ["Meet a buddy, learn a language.",
     "Møt en venn lær et språk.",
