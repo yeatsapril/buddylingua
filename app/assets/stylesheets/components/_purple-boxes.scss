@@ -1,17 +1,20 @@
-.grey-box {
+.purple-box {
     list-style-type: none;
     margin-left: -40px;
+    color: $highlight-1;
 }
 
-.grey-box-list {
-    background-color: $grey-1; 
+.purple-box-list {
+    color: $highlight-1;
+    background-color: white;
     display: inline;
     margin-right: 15px;
     padding: 10px 30px;
     border-radius: 5px;
     font-weight: 500;
+    border: 1px solid $highlight-1;
     // box-shadow: 3px 3px #ccc;
-    box-shadow: 3px 3px 2px 0px rgba(93, 29, 145, 0.2);
+    box-shadow: 3px 3px 2px 0px rgba(194, 121, 253, 0.2);
 }
 
 .edit-icon {
