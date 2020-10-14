@@ -17,7 +17,7 @@
           <% else %>
           <strong style="font-size: 24px;"><%= @user.name.capitalize %></strong>
           <% end %>
-          <span style="font-size: 20px;"><%= @user.age %></span>        
+          <span style="font-size: 20px;"><%= @user.age %></span>
           <span><%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-big mb-2"%></span>
           <p class="pb-3" style="">Here to learn <%= @target_language %>
             <span><%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small"%></span></p>
@@ -134,9 +134,13 @@
           <% end %>
             <%# buddies cards and the chat are in this partial folder %>
             <% unless @buddy.nil?  %>
-              <div id="remote-video" class="video-styling">
+              <div id="remote-video" class="video-styling waiting">
                 <h1>Waiting for <%= @buddy.name %> to join...</h1>
+                <div id="local-video">
+                  <div></div>
+                </div>
               </div>
+
             <% end %>
               <%= render 'shared/tab_items', user: @user %>
               <div id="twilio-tokens" data-twilio-tokens="<%= JSON.generate(@video_tokens) %>"></div>
