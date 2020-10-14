@@ -8,7 +8,8 @@ class MatchesController < ApplicationController
     @match.user_2 = @user
 
     if @match.save
-      flash[:notice] = "Added #{@user.name} as a buddy!"
+      flash[:notice] = "Added #{@user.name} as a buddy!
+                        Head to your profile and start chat chatting!"
     else
       flash[:alert] = "Failed to add #{@user.name} as a buddy."
     end
