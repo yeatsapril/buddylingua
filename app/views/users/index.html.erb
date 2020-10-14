@@ -2,6 +2,7 @@
 
 <div class="container bg-transparent" style="position: relative">
   <div class="row">
+
    
     <div class="col-6 col-md-6 col-lg-6 p-0">
       <div class="container">
@@ -62,15 +63,10 @@
   </div>
 
   <div class="container">
+  <%= render 'shared/mapcard'%>
     <% @users.each do |user| %>
       <%= render 'shared/gbordercard', user: user %>
-    <% end %>    
-    <div class="shadow rounded mt-5" id="map"
-          style="width: 50%; height: 50vh; margin-left:25%"
-          <%# position: absolute; top: 520px; right: -220px; z-index: 1; %>
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>    
+    <% end %>        
   </div>
 </div>
 
