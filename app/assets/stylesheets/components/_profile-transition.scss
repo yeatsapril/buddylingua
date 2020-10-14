@@ -1,0 +1,12 @@
+.profile-load {
+  animation: transitionProfile 0.75s;
+}
+
+@keyframes transitionProfile { 
+  from {
+    opacity: 0;    
+  }
+  to {
+    opacity:1;   
+  }
+}
