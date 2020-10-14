@@ -6,9 +6,8 @@
   <%= link_to "Find a buddy", users_path, class: "button-purple"%>
   <% else %>
   <div data-controller="chat">
-    <div class="container" style="position: relative;" >
-      <h6 class="m-0" style="color: #7E27C4; font-size: 20px">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #7E27C4; font-size: 20px;"></i></h6>
-      <br>
+    <div class="container pl-0" style="position: relative;" >
+      <%# <h6 class="m-0" style="color: #7E27C4; font-size: 20px">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #7E27C4; font-size: 20px;"></i></h6><br> %>
       <% @user.buddies.each do |user| %>
       <%= render 'shared/buddies_card', user: user %>
       <%# BELOW HERE IS CODE FOR CHAT  %>

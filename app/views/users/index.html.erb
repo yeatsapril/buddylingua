@@ -3,11 +3,11 @@
 <div class="container bg-transparent" style="position: relative">
   <div class="row">
 
-   
+
     <div class="col-6 col-md-6 col-lg-6 p-0">
       <div class="container">
         <div class="banner-index"></div>
-       
+
       </div>
     </div>
     <div class="col-6 col-md-6 col-lg-6 d-flex align-items-center p-0">
@@ -15,7 +15,7 @@
         <h1 class="mb-3" style="font-size: 90px; font-weight: 800;">
           <span style="color: #5D1D91;"><strong>Find a</strong></span>
           <strong style="color: #7E27C4;">friend</strong>
-        </h1>        
+        </h1>
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@
                 <option value="">Best match</option>
                 <option value="gender" <%= "selected" if session[:filter] == "gender" %>>Filter by gender</option>
                 <option value="interest" <%= "selected" if session[:filter] == "interest" %>>Filter by interest</option>
+                <option value="location" <%= "selected" if session[:filter] == "location" %>>Filter by location</option>
               </select>
               <% if session[:filter] == "gender" %>
                 <select name="filter_option" onchange="this.form.submit()">
@@ -62,11 +63,13 @@
     </div>
   </div>
 
-  <div class="container">
-  <%= render 'shared/mapcard'%>
+  <div class="container index-card">
+    <% if session[:filter] == "location" %>
+      <%= render 'shared/mapcard'%>
+    <% end %>
     <% @users.each do |user| %>
       <%= render 'shared/gbordercard', user: user %>
-    <% end %>        
+    <% end %>
   </div>
 </div>
 

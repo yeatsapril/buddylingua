@@ -1,19 +1,46 @@
-.video-styling {
+#remote-video {
   position: relative;
-  min-width: 640px;
-  max-width: 640px;
-  min-height: 480px;
-  max-height: 480px;
   border-radius: 12px;
   border: 9px solid #7E27C4;
-  margin-bottom: 30px;
   box-shadow: 3px 3px 2px 0px rgba(194, 121, 253, 0.2);
   display: none;
+  flex-direction: column;
+  background-color: black;
+  min-height: 480px;
 }
 
-.video-styling h1 {
+#remote-video.connected {
+  h1 {
+    display: none;
+  }
+  #local-video {
+    display: block;
+  }
+}
+
+#remote-video.waiting {
+  h1 {
+    display: block;
+    color: #CBA9E7;
+    top: 190px;
+    left: 40px;
+  }
+  #local-video {
+    display: none;
+  }
+}
+
+#remote-video video {
+  max-width: 640px !important;
+}
+
+#local-video {
   position: absolute;
-  color: #CBA9E7;
-  top: 190px;
-  left: 40px;
+  bottom: 0;
+  right: 0;
+}
+
+#local-video, #local-video video {
+  width: 200px;
+  max-width: 200px;
 }

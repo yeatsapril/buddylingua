@@ -1,9 +1,10 @@
-const { connect } = require('twilio-video');
+const { connect, createLocalVideoTrack } = require('twilio-video');
 
-const showVideo = (track) => {
+const showRemoteVideo = (track) => {
   const videoElement = document.getElementById('remote-video')
-  videoElement.innerHTML = ""
   videoElement.appendChild(track.attach());
+  videoElement.classList.remove('waiting')
+  videoElement.classList.add('connected')
 }
 
 const buddyConnected = (buddy) => {
@@ -11,12 +12,12 @@ const buddyConnected = (buddy) => {
   buddy.tracks.forEach(publication => {
     if (publication.isSubscribed) {
       const track = publication.track;
-      showVideo(track);
+      showRemoteVideo(track);
     }
   });
 
   buddy.on('trackSubscribed', track => {
-    showVideo(track);
+    showRemoteVideo(track);
   });
 }
 
@@ -24,18 +25,18 @@ const selfConnected = (room) => {
   room.participants.forEach(participant => {
     participant.tracks.forEach(publication => {
       if (publication.track) {
-        showVideo(publication.track);
+        showRemoteVideo(publication.track);
       }
     });
 
    participant.on('trackSubscribed', track => {
-      showVideo(track);
+      showRemoteVideo(track);
     });
   });
 }
 
 const connectToRoom = (token) => {
-  connect( token.token, {
+  connect(token.token, {
     name: token.room,
     audio: true,
     video: { width: 640 }
@@ -48,10 +49,17 @@ const connectToRoom = (token) => {
   });
 }
 
+const addLocalVideo = () => {
+  createLocalVideoTrack().then((track) => {
+    let video = document.getElementById('local-video')
+    video.appendChild(track.attach())
+  })
+}
+
 const setVideoVisible = (visible) => {
   const element = document.getElementById("remote-video")
   if (visible) {
-    element.style.display = "block"
+    element.style.display = "flex"
   } else {
     element.style.display = "none"
   }
@@ -78,6 +86,7 @@ const setUpTwilio = () => {
       const userId = button.dataset.userId
       const token = tokens[userId]
       setVideoVisible(true)
+      addLocalVideo()
       connectToRoom(token)
     })
   })

@@ -1,33 +1,33 @@
 
 <%#Edit profile form%>
 <div class="container mt-5 mb-5">
-  <div class="row justify-content-center">
+  <div class="row d-flex justify-content-center">
     <div class="col-7">
-      <div class="card p-5">
+      <div class="card p-5" style="background-color: #faf7ff; border: none;">
         <div class="container">
-          <h2 class="pb-1 text-center"> Edit your profile</h2>
-          <p class="pb-3 text-center" style="font-size:18px;">More about <strong class="text-muted">you</strong></p>
+          <h2 class="pb-1 text-center" style="color: #7E27C4;"> Edit your profile</h2>
+          <p class="pb-3 text-center" style="font-size:18px; color: #7E27C4;">More about <strong style="color: #7E27C4;">you</strong></p>
           <br>
           <%= simple_form_for(@user) do |f| %>
-            <strong class="text-muted"><%= f.label "Short bio:" %></strong>
+            <strong style="color: #7E27C4;"><%= f.label "Short bio:" %></strong>
             <%= f.input :description, as: :text, required: false, wrapper: false, label: false, placeholder: "Enter your bio" %>
             <p class="pb-3"></p>
-            <strong class="text-muted"><%= f.label "Age:" %></strong>
+            <strong style="color: #7E27C4;"><%= f.label "Age:" %></strong>
             <%= f.input :age, as: :integer, wrapper: false, label: false, placeholder: "Enter your age" %>
             <p class="pb-3"></p>
-            <strong class="text-muted"><%= f.label "Gender:" %></strong>
+            <strong style="color: #7E27C4;"><%= f.label "Gender:" %></strong>
             <%= f.association :gender, prompt: 'Choose gender..', wrapper: false, label: false %>
             <p class="pb-3"></p>
-            <strong class="text-muted"><%= f.label "Address:" %></strong>
+            <strong style="color: #7E27C4;"><%= f.label "Address:" %></strong>
             <%= f.input :address, as: :string, required: false, wrapper: false, label: false, placeholder: "Enter the address" %>
             <p class="pb-3"></p>
-            <strong class="text-muted"><%= f.label "Interests:" %></strong>
+            <strong style="color: #7E27C4;"><%= f.label "Interests:" %></strong>
             <%= f.association :interests, as: :check_boxes, wrapper: false, label: false%>
             <p class="pb-3"></p>
-            <strong class="text-muted"><%= f.input :photo, as: :file %></strong>
+            <strong style="color: #7E27C4;"><%= f.input :photo, as: :file %></strong>
             <p class="pb-3"></p>
             <%= f.submit 'Save', class: "button-purple" %>
-            <%= link_to 'Cancel', user_path(@user), class: "button-orange ml-2" %>
+            <%= link_to 'Cancel', user_path(@user), class: "button-secondary ml-2" %>
             <% end %>
         </div>
       </div>

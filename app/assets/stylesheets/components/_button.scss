@@ -82,3 +82,18 @@
   background-color: #681fa3;
   color: white;
 }
+
+.button-round {
+  background-color: $grey-2;
+  text-decoration: none !important;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+.button-round:hover {
+  background-color:  $highlight-2;
+  color: white;
+}
+
