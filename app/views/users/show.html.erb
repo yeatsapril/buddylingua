@@ -33,12 +33,12 @@
 
                 <% if @user != current_user && !current_user.buddies.include?(@user) %>
                   <div>
-                    <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange", style:"margin.top: 100px;", method: :post %>
+                    <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange", method: :post %>
                   </div>
-                  <br>
+                  <div style="margin-bottom: 35px;"></div>
                   <div>
-                    <%=link_to "Back", users_path, class: "button-orange", style:"margin.top: 100px;" %>
-                  </div>
+                    <%=link_to users_path, class: "button-round" do %>
+                      <i class="fas fa-arrow-left"></i>               
                 <% end %>
             </div>
           </div>
