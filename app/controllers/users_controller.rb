@@ -4,21 +4,18 @@ class UsersController < ApplicationController
   # before_action :set_session_buddy, only: %i[show]
 
   def index
-    handle_filters    
+    handle_filters
 
     buddies = current_user.buddies + [current_user]
     @markers = buddies.map do |buddy|
       image_url = buddy == current_user ? "orange_cursor.svg" : "purple_pin.svg"
       {
         lat: buddy.latitude,
-        lng: buddy.longitude, 
+        lng: buddy.longitude,
         image_url: helpers.asset_url(image_url)
-      }      
-    end 
+      }
+    end
   end
-    
-    
-  
 
   def show
     setup_twilio_tokens
@@ -102,9 +99,9 @@ class UsersController < ApplicationController
   end
 
   def setup_twilio_tokens
-    #if not me, then nothing further to do.
-    #if its not me, then find the match with me.
-    #then, generate the token
+    # if not me, then nothing further to do.
+    # if its not me, then find the match with me.
+    # then, generate the token
     @video_tokens = {}
     return unless current_user == @user
 
