@@ -1,8 +1,8 @@
 <div class="container mt-5 mb-5">
-  <div class="row justify-content-center">
+  <div class="row d-flex justify-content-center">
     <div class="col-6">
-      <div class="card p-5">
-        <h2>Log in</h2>
+      <div class="card p-5" style="background-color: #f6f2fa; border: none;">
+        <h2 class="pb-4 text-center" style="color: #7E27C4;">Log in</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -16,8 +16,8 @@
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class:"button-purple mb-4" %>
+          <div class="form-actions d-flex justify-content-center">
+            <%= f.button :submit, "Log in", class:"button-purple mb-4 mt-4" %>
           </div>
         <% end %>
 
