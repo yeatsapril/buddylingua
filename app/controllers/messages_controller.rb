@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[create]
+  skip_before_action :verify_authenticity_token, only: %i[create, destroy]
 
   def create
-    puts params
     @match = Match.find(params[:match_id])
     @message = Message.new(message_params)
     @message.match = @match
@@ -13,6 +12,7 @@ class MessagesController < ApplicationController
         @match,
         render_to_string(partial: "message", locals: { message: @message })
       )
+
       redirect_to user_path(current_user, anchor: "message-#{@message.id}", focus: "buddies")
     else
       render "user/show"

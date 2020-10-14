@@ -43,7 +43,6 @@
 
       <%# right column %>
 
-
       <%# content %>
 
       <div class="col-7 mt-5 pr-3">
@@ -94,15 +93,12 @@
               <% end %>
             </div>
             <br>
-            
-
-
+              
             <div class="ml-5 my-3">
               <h6 class="o-2 my-4">SPEAKS</h6>
               <span class="purple-box-list"><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
             </div>
             <br>
-
 
             <div class="ml-5 my-3">
               <h6 class="o-2 my-4">WANTS TO LEARN</h6>
@@ -125,7 +121,6 @@
             </div>
             <br>
             
-
           <%# buddies tab %>
           <%# the params[:focus] is required to keep the user on the correct tab when chatting %>
           <% if params[:focus] %>
@@ -138,7 +133,6 @@
             <%= render 'shared/tab_items', user: @user %>
             <div id="twilio-tokens" data-twilio-tokens="<%= JSON.generate(@video_tokens) %>"></div>
           </div>
-
         </div>
       </div>
     </div>

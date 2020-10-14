@@ -15,20 +15,19 @@ class MatchesController < ApplicationController
     redirect_to users_path
   end
 
-  def destroy    
+  def destroy
     Match.destroy(@match.ids[0])
     flash[:alert] = "Match deleted"
-    redirect_to request.referrer || root_url 
+    redirect_to request.referrer || root_url
   end
 
-   private
+  private
 
   def set_user_match
     @user = User.find(params[:user_id])
   end
 
-  def set_match   
+  def set_match
     @match = @user.find_match(current_user)
   end
-
 end
