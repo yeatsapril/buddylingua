@@ -24,7 +24,26 @@
   border-radius: 13px 13px 0px 0px;
   top: 0px;
   left: 0px;
-  padding: 25px;
+  padding: 5px;
+}
+
+.chat-top-content {
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.container-chat-top p {
+  margin: 0 !important;
+  padding-left: 8px;
+  padding-top: 4px;
+  color: #fff;
+}
+
+.container-chat-top img {
+  height: 36px;
+  width: 36px;
+  border: solid 1px;
+  color: #fff;
 }
 
 #messages {
@@ -34,6 +53,33 @@
 }
 
 .entry-field {
+  width: 100%;
+  padding-top: 25px;
+  border-top: solid 1px $grey-3;
   position: absolute;
   top: 450px;
+}
+
+.message-container {
+  background-color: $purple-2;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 10%;
+  float: left;
+}
+
+.message-container-buddy {
+  background-color: $grey-1;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 10%;
+  float: right;
+}
+
+.message-container p {
+  margin: 0 !important;
 }

@@ -22,8 +22,6 @@
           <div>
             <p><i class="far fa-envelope pr-2">&nbsp;</i><%= @user.email %> </p>
             <p><i class="fas fa-map-pin pr-2">&nbsp;</i><%= @user.address %> </p>
-
-
               <% if @user != current_user && !current_user.buddies.include?(@user) %>
                 <div>
                   <%=link_to "Add Buddy", user_matches_path(@user, @match), class: "button-orange", style:"margin.top: 100px;", method: :post %>
@@ -37,12 +35,10 @@
         </div>
       </div>
     </div>
-
     <%# right column %>
 
 
     <%# content %>
-
     <div class="col-8 mt-5 pr-5">
       <div class="card col-md-8 pl-5 pr-5 rounded border-0">
         <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
@@ -90,7 +86,7 @@
             <% end %>
           </div>
           <br>
-          
+
 
           <div class="ml-5 my-3">
             <h6 class="o-2 my-4">SPEAKS</h6>
@@ -103,7 +99,7 @@
             <span class="grey-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
           </div>
           <br>
-        
+
           <div class="ml-5">
             <% if @user.description.nil? %>
               <h6 class="o-2 my-4">INTERESTS</h6>
@@ -118,7 +114,7 @@
           </div>
           </div>
           <br>
-          
+
 
         <%# buddies tab %>
         <%# the params[:focus] is required to keep the user on the correct tab when chatting %>
