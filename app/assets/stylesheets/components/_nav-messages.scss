@@ -1,0 +1,20 @@
+.grey-box {
+    list-style-type: none;
+    color: $highlight-1;
+}
+
+.grey-box-list {
+    color: $highlight-1;
+    background-color: white;
+    display: inline;
+    margin: 0 16px 0 0 !important;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 400;
+    border: 1px solid $highlight-1;
+    box-shadow: 3px 3px 2px 0px rgba(194, 121, 253, 0.2);
+}
+
+.grey-box-list p {
+  margin: 4px 0 0 0 !important;
+}
