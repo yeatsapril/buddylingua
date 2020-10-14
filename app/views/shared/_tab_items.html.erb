@@ -5,9 +5,9 @@
   <p class="mb-5">Let's fix that!</p>
   <%= link_to "Find a buddy", users_path, class: "button-purple"%>
   <% else %>
-  <div class="d-flex flex-start" data-controller="chat">
-    <div>
-      <h6 class="my-1" style="color: #FFA024;">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #FFA024; font-size: 18px;"></i></h6>
+  <div data-controller="chat">
+    <div class="container" style="position: relative;" >
+      <h6 class="m-0" style="color: #7E27C4; font-size: 20px">YOUR BUDDIES&nbsp; &nbsp;<i class="far fa-hand-point-left" style="color: #7E27C4; font-size: 20px;"></i></h6>
       <br>
       <% @user.buddies.each do |user| %>
       <%= render 'shared/buddies_card', user: user %>
