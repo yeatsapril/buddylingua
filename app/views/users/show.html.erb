@@ -70,7 +70,7 @@
               <%# the params[:focus] is required to keep the user on the correct tab when chatting %>
               <% if params[:focus] %>
                 <a class="nav-link active" id="buddies-tab" data-toggle="tab" href="#buddies" role="tab" aria-controls="buddies" aria-selected="true"> <strong>BUDDIES</strong></a>
-              <% else %> 
+              <% else %>
                 <a class="nav-link" id="buddies-tab" data-toggle="tab" href="#buddies" role="tab" aria-controls="buddies" aria-selected="true"> <strong>BUDDIES</strong></a>
               <% end %>
             </li>
@@ -89,7 +89,9 @@
             <div class="mt-3 ml-5 mb-1">
               <% if @user.description.nil?%>
                 <h6 style="color: #7E27C4;">SELF INTRODUCTION</h6>
-                <p class="mt-3 mb-0">Tell us more about yourself!&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></p>
+                <p class="mt-3 mb-0">Tell us more about yourself!&nbsp; &nbsp;<% if @user == current_user %>
+                    <%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %>
+                    <% end %></p>
               <% elsif @user == current_user %>
                 <h6 style="color: #7E27C4;">SELF INTRODUCTION&nbsp; &nbsp; <%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></h6>
                 <%= @user.description %>
@@ -115,7 +117,10 @@
             <div class="ml-5">
               <% if @user.description.nil? %>
                 <h6 class="mt-3 mb-1" style="color: #7E27C4;">INTERESTS</h6>
-                <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></p>
+                <p class="mt-3">Add your interests and help us to find the ideal buddy for you!&nbsp; &nbsp;
+                  <% if @user == current_user %>
+                    <%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %>
+                  <% end %></p>
               <% elsif @user == current_user %>
                 <h6 class="mt-3 mb-1" style="color: #7E27C4;">INTERESTS&nbsp; &nbsp;<%= link_to "<span><i class='far fa-edit' style='color: #1ED346; font-size: 18px;'></i></span>".html_safe, edit_user_path(@user) %></h6>
                 <%= render 'shared/interests_purple_boxes', interests: @interests %>
