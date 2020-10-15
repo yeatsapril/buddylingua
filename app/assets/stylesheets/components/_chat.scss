@@ -45,39 +45,44 @@
   border: solid 1px;
   color: #fff;
 }
+.messages {
+  position: relative;
+}
 
 #messages {
+  max-height: 450px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .entry-field {
   width: 100%;
+  background-color: #fff;
   padding-top: 25px;
+  padding-bottom: 10px;
   border-top: solid 1px $grey-3;
   position: absolute;
   top: 450px;
 }
 
 .message-container {
-  background-color: $purple-2;
-  border-radius: 8px;
-  margin-bottom: 4px;
-  padding: 10px;
-  max-width: 100%;
-  min-width: 10%;
-  float: left;
-}
-
-.message-container-buddy {
   background-color: $grey-1;
   border-radius: 8px;
   margin-bottom: 4px;
   padding: 10px;
   max-width: 100%;
   min-width: 10%;
-  float: right;
+}
+
+.message-container-buddy {
+  background-color: $purple-2;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 10%;
+  text-align: right;
 }
 
 .message-container p {
