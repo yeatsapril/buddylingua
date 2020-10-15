@@ -8,14 +8,16 @@
         <% end %>
         <div class="b-card-content">
 
-          <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
+          <%= link_to(user) do %>
+            <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
+          <% end %>
           <p><%= user.address %></p>
             <div class="d-flex mt-2 ml-1">
              <div class="b-circle"></div>
             <%# pluck the buddy's id with reflex from here %>
               <p class="b-card-action-1" style="cursor: pointer; position: relative" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>"><i class="fas fa-comment"></i></p>
               <p class="video-call-button b-card-action-2" style="cursor: pointer"
-              data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>          
+              data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>
               <p><i><%= link_to '', user_match_path(user), class: "fas fa-trash b-card-action-3", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?"}%></i></p>
           </div>
       </div>
