@@ -4,7 +4,7 @@
   <div class="container-fluid bg-white" style="height:100%; box-shadow: 3px 3px 3px #F2F2F2; border: solid 1px #D9D9D9;">
     <div class="row m-3">
       <%# left column %>
-      <div class="card p-5 mt-5 ml-2 bg-transparent rounded text-center " style="border-right: 4px solid rgba(191, 191, 191, 0.2); border-bottom: none; border-top: none; border-left: none;">
+      <div class="card pt-5 pb-5 pr-5 pl-4 mt-5 ml-0 bg-transparent rounded text-center " style="border-right: 4px solid rgba(191, 191, 191, 0.2); border-bottom: none; border-top: none; border-left: none;">
       <div>
         <% if @user.photo.attached? %>
         <%= image_tag @user.photo, class: "avatar avatar-large-profile", alt: "avatar", style: 'object-fit: cover;' %>
