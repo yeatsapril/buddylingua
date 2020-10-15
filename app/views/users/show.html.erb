@@ -102,17 +102,22 @@
             </div>
             <br>
 
-            <div class="ml-5 my-3">
-              <h6 class="my-4" style="color: #7E27C4;">SPEAKS</h6>
-              <span class="purple-box-list"><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
+            <div class="ml-5 my-3 mb-0 d-flex">
+
+              <div class="mt-4">
+                <h6 class="mb-3" style="color: #7E27C4;">SPEAKS</h6>
+                <span class="purple-box-list" style=""><%= @native_language.capitalize %> <%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-small" %></span>
+              </div>
+              <%# <div class="m-3"></div> %>
+              <div class="mt-4">
+                <h6 class="mb-3" style="color: #7E27C4;">WANTS TO LEARN</h6>
+                <span class="purple-box-list" style=""><%= @target_language.capitalize %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
+              </div>
+
             </div>
             <br>
 
-            <div class="ml-5 my-4">
-              <h6 class="my-4" style="color: #7E27C4;">WANTS TO LEARN</h6>
-              <span class="purple-box-list"><%= @target_language.capitalize %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
-            </div>
-            <br>
+
 
             <div class="ml-5">
               <% if @user.description.nil? %>
