@@ -13,16 +13,17 @@ const initChatroomCable = () => {
   if (messagesContainer) {
     const id = messagesContainer.dataset.chatroomId;
     $('#messages').bind('DOMSubtreeModified', (event) => {
-      console.log('we changing')
       chatStyler();
 
     })
+
+    $('.msg-button').click(changeChannel);
+
+
     /* attach a submit handler to the form */
     $("#new_message").submit(function(event) {
-
       /* stop form from submitting normally */
       event.preventDefault();
-      console.log('no sendy please');
       /* get the action attribute from the <form action=""> element */
       let $form = $(this),
       url = $form.attr('action');
@@ -31,24 +32,45 @@ const initChatroomCable = () => {
       let posting = $.post(url, {
         message_content: $('#message_content').val()
       });
+      $('#message_content').val('');
     });
 
-    consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
+
+    window.subcription = consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
-        console.log(data)
         messagesContainer.insertAdjacentHTML('beforeend', data);
         let startI = data.search('data-userid') + 13;
         let endI = data.search('class="message message-container-buddy"') - 2;
         let msgUserId = (data.substring(startI, endI));
         const currentUserId = $('#messages').attr('data-currentuser-id');
         if ( msgUserId !== currentUserId ) {
-          console.log('smiles', msgUserId, currentUserId);
           notifsAlert();
         }
 
       }
     });
   }
+}
+
+
+const changeChannel = (event) => {
+  const id = event.currentTarget.getAttribute('data-chatroomId');
+  consumer.subscriptions.remove(window.subcription);
+
+  const messagesContainer = document.getElementById('messages');
+  window.subcription = consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
+    received(data) {
+      messagesContainer.insertAdjacentHTML('beforeend', data);
+      let startI = data.search('data-userid') + 13;
+      let endI = data.search('class="message message-container-buddy"') - 2;
+      let msgUserId = (data.substring(startI, endI));
+      const currentUserId = $('#messages').attr('data-currentuser-id');
+      if ( msgUserId !== currentUserId ) {
+        notifsAlert();
+      }
+
+    }
+  });
 }
 
 export { initChatroomCable };
