@@ -1,10 +1,19 @@
 const { connect, createLocalVideoTrack } = require('twilio-video');
+const rooms = []
 
 const showRemoteVideo = (track) => {
   const videoElement = document.getElementById('remote-video')
   videoElement.appendChild(track.attach());
   videoElement.classList.remove('waiting')
   videoElement.classList.add('connected')
+}
+
+const disconnectVideo = () => {
+  const videoElement = document.getElementById('remote-video')
+  setVideoVisible(false)
+  videoElement.classList.remove('connected')
+  videoElement.classList.add('waiting')
+  rooms.forEach(room => room.disconnect())
 }
 
 const buddyConnected = (buddy) => {
@@ -18,6 +27,13 @@ const buddyConnected = (buddy) => {
 
   buddy.on('trackSubscribed', track => {
     showRemoteVideo(track);
+  });
+}
+
+const selfDisconnected = (room) => {
+  room.localParticipant.tracks.forEach(publication => {
+    const attachedElements = publication.track.detach();
+    attachedElements.forEach(element => element.remove());
   });
 }
 
@@ -42,8 +58,10 @@ const connectToRoom = (token) => {
     video: { width: 640 }
   }).then(room => {
     console.log(`Successfully joined a Room: ${room}`);
+    rooms.push(room)
     selfConnected(room);
     room.on('participantConnected', buddyConnected);
+    room.on('disconnected', selfDisconnected);
   }, error => {
     console.error(`Unable to connect to Room: ${error.message}`);
   });
@@ -88,6 +106,13 @@ const setUpTwilio = () => {
       setVideoVisible(true)
       addLocalVideo()
       connectToRoom(token)
+    })
+  })
+
+  const $hangUpButtons = document.querySelectorAll(".round-hang-up")
+  $hangUpButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      disconnectVideo();
     })
   })
 
