@@ -27,7 +27,7 @@
     </div>
     <br>
     <br>
-      <div id="messages" data-chatroom-id="<%= match[0].id %>">
+      <div id="messages" data-currentuser-id= "<%= current_user.id %>" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
         <%# Current messages %>
         <%= render 'messages/message', message: message %>

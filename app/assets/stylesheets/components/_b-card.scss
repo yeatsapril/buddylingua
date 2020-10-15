@@ -24,6 +24,22 @@
   max-width: 500px;
 }
 
+.b-card-action-change {
+  color: $highlight-2;
+}
+
+.b-card-action-change:hover  {
+  color: $orange-3;
+}
+
+.b-card-action-default {
+  color: $white;
+}
+
+.b-card-action-default:hover  {
+  color: $grey-4;
+}
+
 .b-card-action-1 {
   color: $orange-3;
 }

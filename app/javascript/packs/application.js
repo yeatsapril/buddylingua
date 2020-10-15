@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 // imports mapbox
 import { loadDynamicBannerText } from '../components/banner';
 // imports the typed js
+import { chatStyler } from '../components/chat_styler'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,5 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   setUpTwilio();
   initMapbox();
   loadDynamicBannerText();
+  chatStyler();
 });
 
