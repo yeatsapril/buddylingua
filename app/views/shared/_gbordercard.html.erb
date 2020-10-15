@@ -14,7 +14,7 @@
           <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
           <br>
           <br>
-          <p>[ Level <strong><%= user.target_language_level %></strong> ]</p>
+          <p>[ Target Language level: <strong><%= user.target_language_level %></strong> ]</p>
         </div>
         <%= link_to 'Add', user_matches_path(user, @match), class: "add-button", method: :post %>
       </div>
