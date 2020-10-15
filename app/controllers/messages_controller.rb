@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[create]
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
 
   def create
     @match = Match.find(params[:match_id])

@@ -28,12 +28,14 @@
     </div>
     <br>
     <br>
+    <div class="messages">
       <div id="messages" data-currentuser-id= "<%= current_user.id %>" data-chatroom-id="<%= match[0].id %>">
         <% match[0].messages.each do |message| %>
         <%# Current messages %>
         <%= render 'messages/message', message: message %>
         <% end %>
         <%# Chat entry field %>
+        </div>
         <div class="entry-field">
           <%= simple_form_for [ @user, match[0], @message ], remote: false, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
           <%= f.input :content, as: :string, label: false, placeholder: "Type a message..", class: "form-inline" %>
@@ -41,8 +43,8 @@
           <% end %>
         </div>
         <%# ABOVE HERE IS CODE FOR CHAT %>
-      </div>
     <% end %>
+    </div>
     </div>
   </div>
 </div>
