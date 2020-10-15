@@ -35,21 +35,6 @@ GENDERS.each do |gender|
   genders << Gender.create(name: gender)
 end
 
-puts "Creating Iza our test user..."
-
-User.create(
-  name: "Iza",
-  email: "test@test.com",
-  password: "123456",
-  age: "19",
-  address: "Lillehammer, Norway",
-  gender: genders[0],
-  native_language: languages[10],
-  target_language: languages[7],
-  target_language_level: "2",
-  description: "Hello, my name is Iza and I am here to learn Norwegian. Feel free to contact me at any time!")
-
-puts "Test user created! email is test@test.com and pwd is 123456"
 
 puts "Creating real users..."
 
@@ -57,14 +42,14 @@ anders = User.new(
   name: "Anders",
   email: "anders.johansen@gmail.com",
   password: "123456",
-  age: "31",
+  age: "37",
   address: "Bergen, Norway",
   gender: genders[1],
   native_language: languages[7],
   target_language: languages[8],
   target_language_level: "4",
   description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian. 😀")
-  
+
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/anders_aya4mx.jpg')
   anders.photo.attach(io: file, filename: 'anders.jpg', content_type: 'image/jpg')
 
@@ -147,7 +132,7 @@ torstein = User.new(
   name: "Torstein",
   email: "m_torstein_786@hotmail.com",
   password: "123456",
-  age: "25",
+  age: "20",
   address: "Trondheim, Norway",
   gender: genders[1],
   native_language: languages[7],
@@ -323,6 +308,75 @@ aleksandra = User.new(
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/alekdsandra_sjy6yx.jpg')
   aleksandra.photo.attach(io: file, filename: 'aleksandra.jpg', content_type: 'image/jpg')
   aleksandra.save
+  puts "Completed user #{User.last.name}!"
+
+
+april = User.new(
+  name: "April",
+  email: "april@gmail.com",
+  password: "123456",
+  age: "28",
+  address: "Oslo, Norway",
+  gender: genders[0],
+  native_language: languages[2],
+  target_language: languages[7],
+  target_language_level: "4",
+  description: "Hi! My name is April and I just moved to Oslo from Bristol. I joined BuddyLingua to practice my Norwegian. Nice to meet you all! 😎")
+
+  file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602769985/IMG_4623_pwv0d8.jpg')
+  april.photo.attach(io: file, filename: 'april.jpg', content_type: 'image/jpg')
+  april.save
+  puts "Completed user #{User.last.name}!"
+
+anna = User.new(
+  name: "Anna",
+  email: "anna@gmail.com",
+  password: "123456",
+  age: "27",
+  address: "Stavanger, Norway",
+  gender: genders[0],
+  native_language: languages[8],
+  target_language: languages[2],
+  target_language_level: "4",
+  description: "Hi! My name is Anna and I need to improve my English. I joined BuddyLingua to get the practice I need. Nice to meet you all! 😎")
+
+  file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602770185/profile_oeeb8k.jpg')
+  anna.photo.attach(io: file, filename: 'anna.jpg', content_type: 'image/jpg')
+  anna.save
+  puts "Completed user #{User.last.name}!"
+
+petter = User.new(
+  name: "Petter",
+  email: "petter@gmail.com",
+  password: "123456",
+  age: "34",
+  address: "Lillestrøm, Norway",
+  gender: genders[1],
+  native_language: languages[7],
+  target_language: languages[2],
+  target_language_level: "4",
+  description: "Hi! My name is Petter and I'm Norwegian, I really need to improve my English skills for my current job. I joined BuddyLingua to get to practice. Nice to meet you all! 😎")
+
+  file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602769985/petter_r6f1hd.jpg')
+  petter.photo.attach(io: file, filename: 'petter.jpg', content_type: 'image/jpg')
+  petter.save
+  puts "Completed user #{User.last.name}!"
+
+ingrid = User.new(
+  name: "Ingrid",
+  email: "ingrid@gmail.com",
+  password: "123456",
+  age: "30",
+  address: "Oslo, Norway",
+  gender: genders[1],
+  native_language: languages[7],
+  target_language: languages[10],
+  target_language_level: "3",
+  description: "Hi! My name is Ingrid and I'm Norwegian, I'm here to learn Spanish. I joined BuddyLingua to get the practice I need. Nice to meet you all! 😎")
+
+  file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602769996/profile_ffkmcq.png')
+  ingrid.photo.attach(io: file, filename: 'ingrid.jpg', content_type: 'image/jpg')
+  ingrid.save
   puts "Completed user #{User.last.name}!"
 
 
