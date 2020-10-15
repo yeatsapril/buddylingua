@@ -1,7 +1,7 @@
-<div data-userid="<%= message.user.id %>" class="message message-container-buddy" style="margin: 2px;" id="message-<%= message.id %>">
+<div data-userid="<%= message.user.id %>" class="message message-container-buddy" id="message-<%= message.id %>">
   <i class="author">
-    <span><%= message.user.name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    <span><strong><%= message.user.name %></strong></span>
+    <small><%= message.created_at.strftime("at %l:%M%p") %></small>
   </i>
   <p class="m-0"><%= message.content %></p>
 </div>
