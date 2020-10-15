@@ -5,6 +5,7 @@
   box-shadow: 3px 3px 2px 0px rgba(194, 121, 253, 0.2);
   display: none;
   flex-direction: column;
+  justify-content: center;
   background-color: black;
   min-height: 480px;
 }
@@ -21,9 +22,11 @@
 #remote-video.waiting {
   h1 {
     display: block;
+    text-align: center;
     color: #CBA9E7;
-    top: 190px;
-    left: 40px;
+  }
+  video {
+    display:none;
   }
   #local-video {
     display: none;
@@ -43,4 +46,8 @@
 #local-video, #local-video video {
   width: 200px;
   max-width: 200px;
+}
+
+.video-button {
+  cursor: pointer;
 }

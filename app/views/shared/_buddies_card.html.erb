@@ -16,8 +16,8 @@
              <div class="b-circle"></div>
             <%# pluck the buddy's id with reflex from here %>
               <p class="b-card-action-1" style="cursor: pointer; position: relative" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>"><i class="fas fa-comment"></i></p>
-              <p class="video-call-button b-card-action-2" style="cursor: pointer"
-              data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>
+
+              <p class="video-call-button b-card-action-2 video-button" data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>
               <p><i><%= link_to '', user_match_path(user), class: "fas fa-trash b-card-action-3", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?"}%></i></p>
           </div>
       </div>
