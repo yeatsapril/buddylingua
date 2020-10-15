@@ -19,7 +19,7 @@
           <% end %>
           <span style="font-size: 20px;"><%= @user.age %></span>
           <span><%= render "shared/flag", language: "#{@native_language}", flag_class: "flag-big mb-2"%></span>
-          <p class="pb-3" style="">Here to learn <%= @target_language %>
+          <p class="pb-3" style="">Here to learn <%= @target_language.capitalize %>
             <span><%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small"%></span></p>
           </p>
           <hr class="divider-orange" style="margin: auto;">
@@ -110,7 +110,7 @@
 
             <div class="ml-5 my-4">
               <h6 class="my-4" style="color: #7E27C4;">WANTS TO LEARN</h6>
-              <span class="purple-box-list"><%= @target_language %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
+              <span class="purple-box-list"><%= @target_language.capitalize %> <%= render "shared/flag", language: "#{@target_language}", flag_class: "flag-small" %> </span>
             </div>
             <br>
 
