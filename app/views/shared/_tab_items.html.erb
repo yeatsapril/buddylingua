@@ -13,6 +13,7 @@
       <%# BELOW HERE IS CODE FOR CHAT  %>
       <% end %>
     </div>
+
     <div class="container-chat ml-5">
       <% match = @user.find_match(@buddy) %>
     <div class= "container-chat-top">
@@ -38,7 +39,7 @@
         <div class="entry-field">
           <%= simple_form_for [ @user, match[0], @message ], remote: false, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
           <%= f.input :content, as: :string, label: false, placeholder: "Type a message..", class: "form-inline" %>
-          <%= f.submit 'Send', id: "send-msg", class: "ml-4 button-chat", style: "margin-bottom: 2px", data: { disable_with: false } %>
+          <%= f.submit 'Send', id: "send-msg", class: "ml-2 button-chat", style: "margin-bottom: 2px", data: { disable_with: false } %>
           <% end %>
         </div>
         <%# ABOVE HERE IS CODE FOR CHAT %>
