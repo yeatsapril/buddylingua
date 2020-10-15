@@ -7,18 +7,17 @@
           <%= image_tag('https://source.unsplash.com/random/120x120')%>
         <% end %>
         <div class="b-card-content">
-
           <%= link_to(user) do %>
-            <h2><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%></h2>
+            <h2 class="d-flex justify-content-between"><%= user.name %>,&nbsp;&nbsp; <%= render "shared/flag", language: "#{user.native_language.name}", flag_class: "flag-big"%>
+            <span class=""><i><%= link_to '', user_match_path(user), class: "far fa-times-circle b-card-action-3", style: "font-size: 30px", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?"}%></i></span></h2>
           <% end %>
-          <p><%= user.address %></p>
-            <div class="d-flex mt-2 ml-1">
+          <p class="pb-0 mb-0"><%= user.address %></p>
+            <div class="d-flex ml-1" style="width: 430px">
              <div class="b-circle"></div>
             <%# pluck the buddy's id with reflex from here %>
-              <p class="b-card-action-1 msg-button" style="cursor: pointer; position: relative" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>" data-chatroomId="<%= match[0].id %>"><i class="fas fa-comment"></i></p>
-
-              <p class="video-call-button b-card-action-2 video-button" data-user-id="<%= user.id %>"><i class="fas fa-video"></i></p>
-              <p><i><%= link_to '', user_match_path(user), class: "fas fa-trash b-card-action-3", method: :delete, data: { confirm: "Are you sure you want to remove this buddy?"}%></i></p>
+              <p class="b-card-action-1 mb-0" style="cursor: pointer" data-reflex-permanent data-reflex="click->ChatReflex#update" data-match="<%= user.id %>" data-chatroomId="<%= match[0].id %>"><i class="fas fa-comment" style="font-size: 30px;"></i></p>
+              <p class="video-call-button b-card-action-2 video-button mb-0" data-user-id="<%= user.id %>"><i class="fas fa-video" style="font-size: 30px;"></i></p>
+              </div>
           </div>
       </div>
     </div>
