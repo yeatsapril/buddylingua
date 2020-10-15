@@ -14,7 +14,7 @@
           <p><strong><%= user.native_language.name.capitalize %></strong> looking to learn <strong><%= user.target_language.name.capitalize %></strong></p>
           <br>
           <br>
-          <p>[ Target Language level: <strong><%= user.target_language_level %></strong> ]</p>
+          <p>[ level in <strong> <%= user.target_language.name %> </strong>: <%= user.target_language_level %> ]</p>
         </div>
         <%= link_to 'Add', user_matches_path(user, @match), class: "add-button", method: :post %>
       </div>
