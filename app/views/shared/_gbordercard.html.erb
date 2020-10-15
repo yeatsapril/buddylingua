@@ -11,7 +11,7 @@
         <div class="c-details">
           <h2><%= user.name %>, <%= user.age %> <span style="color: #7F7F7F; font-weight: 200;">&nbsp;|&nbsp;</span> <strong class="pl-8"> <%= current_user.match_percentage(user) %> % </strong>  </h2>
           <h3><%= user.address %></h3>
-          <p><strong><%= user.native_language.name %></strong> looking to learn <strong><%= user.target_language.name %></strong></p>
+          <p><strong><%= user.native_language.name.capitalize %></strong> looking to learn <strong><%= user.target_language.name.capitalize %></strong></p>
           <br>
           <br>
           <p>[ Target Language level: <strong><%= user.target_language_level %></strong> ]</p>
