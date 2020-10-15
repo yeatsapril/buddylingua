@@ -63,7 +63,7 @@ anders = User.new(
   native_language: languages[7],
   target_language: languages[8],
   target_language_level: "4",
-  description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian 😀")
+  description: "Hi everyone! I want to learn Polish, and I'd be happy to teach you my native language which is Norwegian. 😀")
   
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/anders_aya4mx.jpg')
   anders.photo.attach(io: file, filename: 'anders.jpg', content_type: 'image/jpg')
@@ -82,7 +82,7 @@ jacqueline = User.new(
   native_language: languages[3],
   target_language: languages[11],
   target_language_level: "3",
-  description: "Je m'appelle Jacqueline, J'habite à Paris. Enchanté de faire votre connaissance!")
+  description: "Je m'appelle Jacqueline. J'habite à Paris. Enchanté de faire votre connaissance!")
 
   file  = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/jacqueline_lairdg.jpg')
   jacqueline.photo.attach(io: file, filename: 'jacqueline.jpg', content_type: 'image/jpg')
@@ -100,7 +100,7 @@ monika = User.new(
   native_language: languages[8],
   target_language: languages[10],
   target_language_level: "4",
-  description: "Hi my name is Monika! I am a friendly and easy-going person. Please let me assist you with learning the Polish language 🙂")
+  description: "Hi my name is Monika! I am a friendly and easy-going person. Please let me assist you with learning the Polish language. 🙂")
 
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/monika_hi58s1.jpg')
   monika.photo.attach(io: file, filename: 'monika.jpg', content_type: 'image/jpg')
@@ -135,7 +135,7 @@ sofia = User.new(
   native_language: languages[9],
   target_language: languages[0],
   target_language_level: "1",
-  description: "Hi everyone, my name is Sofia and I come from Sochi. I am happy to help you with learning Russian language.")
+  description: "Hi everyone, my name is Sofia and I come from Sochi. I am happy to help you with learning the Russian language.")
 
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/sofia_lso3y6.jpg')
   sofia.photo.attach(io: file, filename: 'sofia.jpg', content_type: 'image/jpg')
@@ -282,7 +282,7 @@ ebba = User.new(
   native_language: languages[11],
   target_language: languages[3],
   target_language_level: "5",
-  description: "Hi, my name is Ebba and I come from Sweden. I make friends quickly and can talk with you about pretty much anything 🙃 I'm here to practice my French.")
+  description: "Hi, my name is Ebba and I come from Sweden. I make friends quickly and can talk with you about pretty much anything. 🙃 I'm here to practice my French.")
 
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/ebba_zwgo5f.jpg')
   ebba.photo.attach(io: file, filename: 'ebba.jpg', content_type: 'image/jpg')
@@ -300,7 +300,7 @@ olivia = User.new(
   native_language: languages[2],
   target_language: languages[4],
   target_language_level: "1",
-  description: "Hello! My name is Olivia I'm an Italian translator currently living in Manchaster. I'd like to learn German. Feel free to contact me if you're interested in a language exchange 😃" )
+  description: "Hello! My name is Olivia I'm an Italian translator currently living in Manchaster. I'd like to learn German. Feel free to contact me if you're interested in a language exchange. 😃" )
 
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/olivia_zpsgtq.jpg')
   olivia.photo.attach(io: file, filename: 'olivia.jpg', content_type: 'image/jpg')
@@ -318,7 +318,7 @@ aleksandra = User.new(
   native_language: languages[9],
   target_language: languages[7],
   target_language_level: "4",
-  description: "Hi! My name is Ola and I am currently living in Lublin, Poland. I joined BuddyLingua to practice my Russian language. Nice to meet you all 😎")
+  description: "Hi! My name is Ola and I am currently living in Lublin, Poland. I joined BuddyLingua to practice my Russian language. Nice to meet you all! 😎")
 
   file = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/alekdsandra_sjy6yx.jpg')
   aleksandra.photo.attach(io: file, filename: 'aleksandra.jpg', content_type: 'image/jpg')
