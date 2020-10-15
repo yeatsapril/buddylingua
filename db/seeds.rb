@@ -42,7 +42,6 @@ name_monika      = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v
 name_klaus       = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/klaus_fv0wac.jpg')
 name_sofia       = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/sofia_lso3y6.jpg')
 name_torstein    = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/torstein_cnn7al.jpg')
-name_torstein    = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/torstein_cnn7al.jpg')
 name_karolina    = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508838/karolina_ifw9kp.jpg')
 name_tomek       = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508840/tomek_bo0fwg.jpg')
 name_gabriella   = URI.open('https://res.cloudinary.com/dh27aoc3s/image/upload/v1602508839/gabriella_tqfqdc.jpg')
