@@ -8,8 +8,8 @@ class MatchesController < ApplicationController
     @match.user_2 = @user
 
     if @match.save
-      flash[:notice] = "Added #{@user.name} as a buddy!
-                        Head to your profile and start chat chatting!"
+      flash[:notice] =
+        render_to_string(partial: "shared/buddy_added_flash", locals: { user: @user })
     else
       flash[:alert] = "Failed to add #{@user.name} as a buddy."
     end
